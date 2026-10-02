@@ -1,0 +1,76 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Promise from '../components/Promise.astro';
+import Steps from '../components/Steps.astro';
+import ChateauGrid from '../components/ChateauGrid.astro';
+import CommuneList from '../components/CommuneList.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site, chateaux, faq, asset } from '../lib/data';
+import { ui, routes } from '../lib/i18n';
+
+const t = ui();
+const r = routes();
+const p = t.pages.home;
+const homeFaq = faq.filter((f) => f.home).map((f) => ({ id: f.id, ...f.fr }));
+---
+<BaseLayout title={p.title} description={p.description}>
+  <section class="container-x grid items-center gap-10 pt-8 pb-12 sm:pt-14 lg:grid-cols-[1.1fr_1fr]">
+    <div>
+      <p class="eyebrow mb-4">{site.fr.tagline}</p>
+      <h1 class="text-[2.6rem] leading-[1.05] sm:text-6xl">{p.h1}</h1>
+      <p class="mt-5 max-w-xl text-xl text-muted">{p.lead}</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href={r.reserver} class="btn-primary">{t.cta.book}</a>
+        <a href={r.chateaux} class="btn-secondary">{t.cta.seeChateaux}</a>
+      </div>
+      <p class="mt-5 text-sm text-muted">{site.fr.deliveryNote} {site.fr.priceNote}</p>
+    </div>
+    <Picture
+      src={asset('site/hero.jpg')}
+      alt=""
+      formats={['avif', 'webp']}
+      widths={[480, 720, 1080]}
+      sizes="(min-width: 1024px) 520px, 100vw"
+      class="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-[0_10px_0_0_var(--color-accent-soft)]"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </section>
+
+  <section class="container-x" aria-labelledby="promise-title">
+    <h2 id="promise-title" class="sr-only">{t.home.promiseTitle}</h2>
+    <Promise />
+  </section>
+
+  <section class="container-x mt-20" aria-labelledby="steps-title">
+    <h2 id="steps-title" class="mb-8 text-3xl sm:text-4xl">{t.home.stepsTitle}</h2>
+    <Steps />
+  </section>
+
+  <section class="container-x mt-20" aria-labelledby="chateaux-title">
+    <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 id="chateaux-title" class="text-3xl sm:text-4xl">{t.home.chateauxTitle}</h2>
+        <p class="mt-2 max-w-xl text-muted">{t.home.chateauxIntro}</p>
+      </div>
+      <a href={r.chateaux} class="font-bold">{t.cta.seeChateaux}</a>
+    </div>
+    <ChateauGrid items={chateaux} />
+  </section>
+
+  <section id="zone" class="container-x mt-20" aria-labelledby="zone-title">
+    <h2 id="zone-title" class="text-3xl sm:text-4xl">{t.home.zoneTitle}</h2>
+    <p class="mt-2 mb-6 max-w-xl text-muted">{t.home.zoneIntro}</p>
+    <CommuneList />
+  </section>
+
+  <section class="container-x mt-20 max-w-3xl" aria-labelledby="faq-title">
+    <h2 id="faq-title" class="mb-6 text-3xl sm:text-4xl">{t.home.faqTitle}</h2>
+    <FaqList items={homeFaq} />
+    <p class="mt-5"><a href={r.faq} class="font-bold">{t.cta.allFaq}</a></p>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import { rich } from '../lib/format';
+interface Props { items: { id: string; q: string; a: string }[]; headingLevel?: 'h2' | 'h3' }
+const { items, headingLevel = 'h3' } = Astro.props;
+const H = headingLevel;
+---
+<div class="divide-y divide-line overflow-hidden rounded-[var(--radius-blob)] bg-white ring-1 ring-line">
+  {items.map((i) => (
+    <details class="group" id={`faq-${i.id}`}>
+      <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 hover:bg-cream [&::-webkit-details-marker]:hidden">
+        <H class="text-lg font-extrabold">{i.q}</H>
+        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-soft text-xl font-black transition group-open:rotate-45" aria-hidden="true">+</span>
+      </summary>
+      <p class="px-6 pb-6 text-muted" set:html={rich(i.a)} />
+    </details>
+  ))}
+</div>

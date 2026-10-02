@@ -1,0 +1,47 @@
+{
+  "name": "Rebondi",
+  "url": "https://rebondi.netlify.app",
+  "demo": true,
+  "baseCity": "Uccle",
+  "currency": "EUR",
+  "deliveryFee": 15,
+  "owner": {
+    "firstName": "Alex",
+    "fullName": "[NOM COMPLET DE L'EXPLOITANT]",
+    "photo": "alex.jpg"
+  },
+  "contact": {
+    "phoneDisplay": "[TÉLÉPHONE]",
+    "phoneE164": "",
+    "whatsappE164": "",
+    "email": "[E-MAIL]"
+  },
+  "legal": {
+    "companyName": "[DÉNOMINATION OU NOM DE L'INDÉPENDANT]",
+    "bce": "[N° BCE]",
+    "vat": "[N° TVA OU MENTION FRANCHISE]",
+    "address": {
+      "street": "[RUE ET NUMÉRO]",
+      "postalCode": "1180",
+      "city": "Uccle",
+      "country": "BE"
+    }
+  },
+  "fr": {
+    "tagline": "Châteaux gonflables livrés, installés et repris au sud de Bruxelles",
+    "demoNotice": "Site de démonstration : châteaux, prix et illustrations sont fictifs.",
+    "promise": [
+      { "title": "Installation et reprise incluses", "text": "Alex monte le château, vérifie l'ancrage, vous explique les consignes et revient le démonter." },
+      { "title": "Matériel certifié EN 14960", "text": "La norme européenne de sécurité des structures gonflables de jeu." },
+      { "title": "Un seul interlocuteur", "text": "De la demande à la reprise, vous parlez à Alex. Pas de centrale d'appel." }
+    ],
+    "steps": [
+      { "title": "Choisissez un château et une date", "text": "Vérifiez l'espace dont vous disposez, puis envoyez votre demande via le formulaire ou WhatsApp." },
+      { "title": "Alex confirme et installe", "text": "Confirmation sous 24 h. Le jour J, Alex livre, installe et ancre le château, puis vous donne les consignes de sécurité." },
+      { "title": "Les enfants rebondissent, on reprend", "text": "Vous profitez de la fête. Alex revient démonter et nettoyer : vous n'avez rien à ranger." }
+    ],
+    "deliveryNote": "Livraison forfaitaire de 15 € dans toute la zone desservie. Installation et reprise incluses.",
+    "weekendNote": "Formule week-end : livraison le vendredi, reprise le lundi.",
+    "priceNote": "Prix TVAC."
+  }
+}

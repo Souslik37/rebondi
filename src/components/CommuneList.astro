@@ -1,0 +1,15 @@
+---
+import { communes, type Commune } from '../lib/data';
+import { routes, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
+interface Props { items?: Commune[]; locale?: Locale }
+const { items = communes, locale = DEFAULT_LOCALE } = Astro.props;
+---
+<ul class="flex flex-wrap gap-3" role="list">
+  {items.map((c) => (
+    <li>
+      <a href={routes(locale).commune(c.slug)} class="inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-5 font-bold text-ink no-underline ring-1 ring-line hover:bg-accent-soft hover:ring-ink">
+        {c.name} <span class="text-sm font-semibold text-muted">{c.postalCode}</span>
+      </a>
+    </li>
+  ))}
+</ul>

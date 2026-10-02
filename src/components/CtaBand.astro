@@ -1,0 +1,19 @@
+---
+import { ui, routes, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
+import { whatsappUrl } from '../lib/contact';
+interface Props { locale?: Locale; href?: string }
+const { locale = DEFAULT_LOCALE, href } = Astro.props;
+const t = ui(locale);
+---
+<section class="container-x mt-20" aria-labelledby="cta-title">
+  <div class="rounded-[2.5rem] bg-accent px-6 py-12 text-center sm:px-12">
+    <h2 id="cta-title" class="text-3xl sm:text-4xl">{t.cta.finalTitle}</h2>
+    <p class="mx-auto mt-3 max-w-xl text-lg">{t.cta.finalText}</p>
+    <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+      <a href={href ?? routes(locale).reserver} class="btn border-2 border-ink bg-ink text-white hover:bg-white hover:text-ink">{t.cta.book}</a>
+      <a href={whatsappUrl(t.form.whatsappIntro)} class="btn border-2 border-ink bg-white text-ink hover:bg-accent-soft" rel="noopener" target="_blank">
+        {t.cta.whatsapp}<span class="sr-only"> (nouvelle fenêtre)</span>
+      </a>
+    </div>
+  </div>
+</section>
