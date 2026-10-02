@@ -149,7 +149,7 @@ const yesNo = [
   </div>
 </form>
 
-<script is:inline type="application/json" id="booking-data" set:html={JSON.stringify({ availability, messages, whatsapp: site.contact.whatsappE164 })}></script>
+<script is:inline type="application/json" id="booking-data" set:html={JSON.stringify({ availability, messages, whatsapp: site.contact.whatsappE164, demo: site.demo, merci: r.merci })}></script>
 
 <script>
   type Avail = Record<string, { name: string; dates: string[]; labels: Record<string, string> }>;
@@ -157,6 +157,8 @@ const yesNo = [
     availability: Avail;
     messages: Record<string, string> & { labels: Record<string, string> };
     whatsapp: string;
+    demo: boolean;
+    merci: string;
   };
   const m = data.messages;
   const form = document.getElementById('booking-form') as HTMLFormElement;
@@ -304,6 +306,11 @@ const yesNo = [
       summary.focus();
     } else {
       summary.classList.add('hidden');
+      // Mode démo (GitHub Pages ne reçoit pas les formulaires) : on simule l'envoi
+      if (data.demo) {
+        e.preventDefault();
+        location.href = data.merci;
+      }
     }
   });
 

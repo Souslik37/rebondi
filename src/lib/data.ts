@@ -13,6 +13,7 @@ const slug = z.string().regex(/^[a-z0-9-]+$/, 'Slug : minuscules, chiffres et ti
 const siteSchema = z.object({
   name: z.string(),
   url: z.url(),
+  basePath: z.string().regex(/^(\/[a-z0-9-]+)?$/, 'basePath : "" ou "/sous-dossier"'),
   demo: z.boolean(),
   baseCity: z.string(),
   currency: z.string(),

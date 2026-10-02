@@ -16,19 +16,22 @@ export function tpl(str: string, vars: Record<string, string | number>): string 
   return str.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? String(vars[k]) : `{${k}}`));
 }
 
+/** Préfixe un chemin absolu avec le sous-dossier d'hébergement (ex. /rebondi). */
+export const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`;
+
 const ROUTES = {
   fr: {
-    home: '/',
-    chateaux: '/chateaux/',
-    chateau: (slug: string) => `/chateaux/${slug}/`,
-    commune: (slug: string) => `/location-chateau-gonflable-${slug}/`,
-    reserver: '/reserver/',
-    merci: '/merci/',
-    about: '/a-propos/',
-    faq: '/faq/',
-    conditions: '/conditions-de-location/',
-    mentions: '/mentions-legales/',
-    confidentialite: '/confidentialite/',
+    home: withBase('/'),
+    chateaux: withBase('/chateaux/'),
+    chateau: (slug: string) => withBase(`/chateaux/${slug}/`),
+    commune: (slug: string) => withBase(`/location-chateau-gonflable-${slug}/`),
+    reserver: withBase('/reserver/'),
+    merci: withBase('/merci/'),
+    about: withBase('/a-propos/'),
+    faq: withBase('/faq/'),
+    conditions: withBase('/conditions-de-location/'),
+    mentions: withBase('/mentions-legales/'),
+    confidentialite: withBase('/confidentialite/'),
   },
 } as const;
 

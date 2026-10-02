@@ -19,7 +19,7 @@ Tout ce qui apparaît sur le site entre [CROCHETS] et surligné en jaune est lis
 - [ ] [N° BCE] → `legal.bce` (+ mentions légales)
 - [ ] [N° TVA OU MENTION FRANCHISE] → `legal.vat` (+ mentions légales)
 - [ ] [RUE ET NUMÉRO] → `legal.address.street` (+ mentions légales, confidentialité)
-- [ ] URL définitive du site → `url` (actuellement `https://rebondi.netlify.app`, utilisée pour le sitemap, les balises canonical et Open Graph)
+- [ ] URL définitive du site → `url` + `basePath` (actuellement GitHub Pages : `https://souslik37.github.io` + `/rebondi`)
 
 ## 2. Page À propos (`src/data/ui.fr.json` → `pages.about`)
 
@@ -61,6 +61,6 @@ Tout ce qui apparaît sur le site entre [CROCHETS] et surligné en jaune est lis
 - [ ] Vérifier les certificats EN 14960 de chaque château
 - [ ] Relire les 10 textes de `src/data/communes.json` (rédigés comme brouillons)
 - [ ] Image de partage `public/og-default.jpg` (1200 × 630 px)
-- [ ] Netlify : activer les notifications e-mail du formulaire « reservation » (voir README)
+- [ ] Passer sur Netlify (ou brancher un service de formulaire) pour recevoir les demandes : sur GitHub Pages l'envoi est seulement simulé
 - [ ] Passer `"demo": false` dans `src/data/site.json` pour retirer le bandeau « site de démonstration »
 - [ ] Supprimer `scripts/generate-demo-images.mjs` et la commande `images:demo` de `package.json`

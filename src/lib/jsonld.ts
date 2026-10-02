@@ -1,13 +1,13 @@
 // Données structurées schema.org. Aucune note ni avis : on n'invente rien.
 import { site, communes, chateauImage, type Chateau } from './data';
-import { routes } from './i18n';
+import { routes, withBase } from './i18n';
 import { isPlaceholder } from './format';
 
 const abs = (path: string) => new URL(path, site.url).toString();
 const clean = <T extends Record<string, unknown>>(o: T) =>
   Object.fromEntries(Object.entries(o).filter(([, v]) => typeof v !== 'string' || !isPlaceholder(v)));
 
-export const businessId = () => abs('/#business');
+export const businessId = () => abs(withBase('/#business'));
 
 export function localBusiness() {
   const a = site.legal.address;
@@ -17,8 +17,8 @@ export function localBusiness() {
     '@id': businessId(),
     name: site.name,
     description: site.fr.tagline,
-    url: abs('/'),
-    image: abs('/og-default.jpg'),
+    url: abs(withBase('/')),
+    image: abs(withBase('/og-default.jpg')),
     ...clean({ telephone: site.contact.phoneE164, email: site.contact.email }),
     address: {
       '@type': 'PostalAddress',

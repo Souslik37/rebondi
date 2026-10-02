@@ -107,7 +107,29 @@ d'une autre commune : Google pénalise le contenu dupliqué). `metaDescription` 
 
 ---
 
-## Déployer sur Netlify
+## Déployer sur GitHub Pages (version démo actuelle)
+
+Le site est publié sur `https://souslik37.github.io/rebondi/` par le workflow
+`.github/workflows/deploy.yml`, à chaque `git push` sur `main`.
+
+1. Créez le repo **public** `rebondi` sur github.com (sans README, .gitignore ni licence).
+2. Poussez le projet :
+   ```bash
+   git remote add origin https://github.com/Souslik37/rebondi.git
+   git push -u origin main
+   ```
+3. Sur GitHub : **Settings → Pages → Source : GitHub Actions** (une seule fois).
+   Si le premier déploiement a échoué avant ce réglage, relancez-le dans l'onglet **Actions**.
+
+Limites de GitHub Pages :
+- **Le formulaire n'est pas reçu** (GitHub Pages n'a pas de traitement de formulaires). Tant que
+  `"demo": true`, l'envoi est simulé et redirige vers la page « Merci ».
+- Le site vit dans un sous-dossier : `basePath` vaut `"/rebondi"` dans `src/data/site.json`.
+  Avec un vrai nom de domaine, mettez `"basePath": ""`.
+- `robots.txt` n'est lu par les moteurs de recherche qu'à la racine d'un domaine : il ne sert
+  vraiment qu'avec un domaine propre.
+
+## Déployer sur Netlify (pour la vraie mise en ligne, avec formulaire)
 
 1. Créez un dépôt sur GitHub et poussez le projet :
    ```bash
@@ -121,8 +143,9 @@ d'une autre commune : Google pénalise le contenu dupliqué). `metaDescription` 
    déploiement. Allez dans **Site configuration → Forms → Form notifications → Add notification →
    Email notification** et indiquez l'adresse qui doit recevoir les demandes.
    Les envois sont aussi consultables dans l'onglet **Forms**. (Plan gratuit : 100 envois par mois.)
-4. Mettez à jour `url` dans `src/data/site.json` avec l'adresse Netlify (ex.
-   `https://rebondi.netlify.app`) ou votre futur nom de domaine.
+4. Dans `src/data/site.json` : `url` = l'adresse Netlify (ex. `https://rebondi.netlify.app`)
+   ou votre nom de domaine, `basePath` = `""`, et `demo` = `false` pour que le formulaire
+   soit réellement envoyé.
 
 Chaque `git push` sur `main` redéploie le site.
 
@@ -137,7 +160,7 @@ Chaque `git push` sur `main` redéploie le site.
      affichée dans l'interface, et un `CNAME` `www` → `<votre-site>.netlify.app`.
 4. Attendez la propagation DNS (de quelques minutes à 24 h). Netlify active ensuite le HTTPS
    (Let's Encrypt) automatiquement.
-5. Mettez `"url": "https://rebondi.be"` dans `src/data/site.json` puis redéployez : le sitemap,
+5. Mettez `"url": "https://rebondi.be"` et `"basePath": ""` dans `src/data/site.json` puis redéployez : le sitemap,
    les balises canonical, Open Graph et le schema.org utiliseront la bonne adresse.
 6. Déclarez le site dans [Google Search Console](https://search.google.com/search-console)
    et soumettez `https://rebondi.be/sitemap-index.xml`.

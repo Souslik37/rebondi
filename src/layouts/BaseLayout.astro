@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { site } from '../lib/data';
-import { ui, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
+import { ui, withBase, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
 import { localBusiness } from '../lib/jsonld';
 
 interface Props {
@@ -17,7 +17,7 @@ interface Props {
   locale?: Locale;
   hideMobileBar?: boolean;
 }
-const { title, description, noindex = false, ogImage = '/og-default.jpg', jsonLd = [], locale = DEFAULT_LOCALE, hideMobileBar = false } = Astro.props;
+const { title, description, noindex = false, ogImage = withBase('/og-default.jpg'), jsonLd = [], locale = DEFAULT_LOCALE, hideMobileBar = false } = Astro.props;
 const t = ui(locale);
 const canonical = new URL(Astro.url.pathname, site.url).toString();
 const ogImageUrl = new URL(ogImage, site.url).toString();
@@ -32,8 +32,8 @@ const ogImageUrl = new URL(ogImage, site.url).toString();
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content="#fff8f0" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content={t.ogLocale} />
