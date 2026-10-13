@@ -102,7 +102,7 @@
   "pages": {
     "home": {
       "title": "Location de château gonflable à Bruxelles et dans le Brabant wallon | Rebondi",
-      "description": "Châteaux gonflables neufs à louer pour le week-end, dès 100 €. Retrait à Genval, livraison possible sur demande. Norme EN 14960, annulation gratuite.",
+      "description": "Châteaux gonflables neufs à louer pour le week-end, dès 100 €. Retrait à Genval, livraison possible sur demande. Norme EN 14960, report gratuit en cas de mauvais temps.",
       "h1": "Un château gonflable pour le week-end, dès 100 €",
       "lead": "Trois châteaux neufs, prix fixe, matériel inclus. Vous venez le chercher à Genval, ou on vous le livre sur demande."
     },
@@ -156,7 +156,7 @@
     },
     "conditions": {
       "title": "Conditions de location : retrait, paiement, annulation | Rebondi",
-      "description": "Conditions de location des châteaux gonflables Rebondi : réservation, retrait et retour, paiement, caution, annulation gratuite, météo et responsabilités.",
+      "description": "Conditions de location des châteaux gonflables Rebondi : réservation, retrait et retour, paiement, caution, report en cas de mauvais temps et responsabilités.",
       "h1": "Conditions de location"
     },
     "mentions": {

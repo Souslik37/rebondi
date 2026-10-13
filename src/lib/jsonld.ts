@@ -18,7 +18,7 @@ export function localBusiness() {
     name: site.name,
     description: site.fr.tagline,
     url: abs(withBase('/')),
-    image: abs(withBase('/og-default.jpg')),
+    image: abs(withBase('/og-image.jpg')),
     ...clean({ telephone: site.contact.phoneE164, email: site.contact.email }),
     address: {
       '@type': 'PostalAddress',
