@@ -24,5 +24,5 @@ export const PRESET_IDS = PRESETS.map((t) => t.id) as PresetId[];
 /** Noms de site à comparer. `domain` est affiché en pied de page pour l'aperçu. */
 export const BRANDS = [
   { id: 'rebondi', name: 'Rebondi', domain: 'rebondi.be' },
-  { id: 'chateau-gonflable', name: 'Château Gonflable', domain: 'chateaugonflable.be' },
+  { id: 'chateau-gonflable', name: 'Château Gonflable', domain: 'chateaugonflable.eu' },
 ] as const;

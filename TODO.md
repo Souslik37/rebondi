@@ -5,7 +5,6 @@ Tout ce qui apparaît sur le site entre [CROCHETS] et surligné en jaune est lis
 
 ## À compléter
 
-- [ ] [E-MAIL] : adresse de contact → `src/data/site.json` (`contact.email`), mentions légales, confidentialité
 - [ ] [PHOTO D'ALEX] : remplacer `src/assets/site/alex.jpg` (carré, ≥ 900 px), puis retirer `[PHOTO D'ALEX]` de `photoAlt` dans `src/data/ui.fr.json`
 
 ## À vérifier avant la mise en ligne

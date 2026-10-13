@@ -1,6 +1,6 @@
 ## Responsable du traitement
 
-Alexandre Le Clercq (Rebondi), 1180 Uccle, Belgique. Contact : [E-MAIL] ou 0478 46 44 10.
+Alexandre Le Clercq (Rebondi), 1180 Uccle, Belgique. Contact : contact@rebondi.be ou 0478 46 44 10.
 
 ## Données collectées
 
@@ -26,6 +26,6 @@ Ce site n'utilise aucun cookie, ni outil de mesure d'audience, ni contenu tiers 
 
 ## Vos droits
 
-Vous pouvez demander l'accès, la rectification, l'effacement ou la limitation du traitement de vos données, ou vous y opposer, en écrivant à [E-MAIL]. Vous pouvez aussi introduire une réclamation auprès de l'Autorité de protection des données (autoriteprotectiondonnees.be).
+Vous pouvez demander l'accès, la rectification, l'effacement ou la limitation du traitement de vos données, ou vous y opposer, en écrivant à contact@rebondi.be. Vous pouvez aussi introduire une réclamation auprès de l'Autorité de protection des données (autoriteprotectiondonnees.be).
 
 *Dernière mise à jour : 13 octobre 2026.*

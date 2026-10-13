@@ -3,7 +3,7 @@
 - **Nom** : Alexandre Le Clercq, exploitant de Rebondi
 - **Localité** : 1180 Uccle, Belgique
 - **Téléphone** : 0478 46 44 10
-- **E-mail** : [E-MAIL]
+- **E-mail** : contact@rebondi.be
 
 ## Hébergement
 

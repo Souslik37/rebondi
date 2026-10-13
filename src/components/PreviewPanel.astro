@@ -22,6 +22,10 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
           </label>
         ))}
       </div>
+      <label for="pv-name" class="mt-3 block text-sm font-semibold">Ou tapez un autre nom</label>
+      <input id="pv-name" type="text" maxlength="40" autocomplete="off" placeholder="Ex. Pomme d'Air"
+        class="mt-1 block min-h-11 w-full rounded-xl border-2 border-line bg-white px-3 text-base focus:border-ink" />
+      <p id="pv-domain" class="mt-1 text-xs text-muted"></p>
     </fieldset>
 
     <fieldset class={section}>
@@ -60,6 +64,7 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
       <button type="button" id="pv-reset" class="btn-secondary !min-h-11 !px-4 !py-2 !text-sm">Réinitialiser</button>
     </div>
     <p id="pv-status" class="mt-2 min-h-5 text-xs font-semibold text-accent-ink" aria-live="polite"></p>
+    <p class="text-xs text-muted">Aperçu pour tester : rien n'est modifié sur le vrai site, le choix reste uniquement sur cet appareil.</p>
   </div>
 </details>
 
@@ -76,6 +81,16 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
   const sIn = panel.querySelector<HTMLInputElement>('#pv-s')!;
   const status = panel.querySelector<HTMLElement>('#pv-status')!;
   const DEFAULT = brands[0]!;
+  const nameIn = panel.querySelector<HTMLInputElement>('#pv-name')!;
+  const domainOut = panel.querySelector<HTMLElement>('#pv-domain')!;
+  // Nom libre → domaine deviné (sans accents ni espaces) en .be
+  const slug = (n: string) => n.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+  const resolve = (): Brand => {
+    const b = brands.find((x) => x.id === state.brand);
+    if (b) return b;
+    const name = (state.brand ?? '').trim();
+    return name ? { id: 'custom', name, domain: `${slug(name) || 'monsite'}.be` } : DEFAULT;
+  };
 
   // --- Nom du site : remplace le nom par défaut dans tous les textes de la page
   const textNodes: { node: Text; original: string }[] = [];
@@ -87,12 +102,16 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
     }
   }
   const originalTitle = document.title;
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('a[href*="' + DEFAULT.domain + '"]')].map((a) => ({ a, href: a.getAttribute('href')! }));
   function applyBrand() {
-    const b = brands.find((x) => x.id === state.brand) ?? DEFAULT;
+    const b = resolve();
     const swap = (s: string) => s.split(DEFAULT.domain).join(b.domain).split(DEFAULT.name).join(b.name);
     textNodes.forEach(({ node, original }) => (node.nodeValue = swap(original)));
+    links.forEach(({ a, href }) => a.setAttribute('href', swap(href)));
     document.title = swap(originalTitle);
     panel.querySelectorAll<HTMLInputElement>('input[name="pv-brand"]').forEach((r) => (r.checked = r.value === b.id));
+    if (document.activeElement !== nameIn) nameIn.value = b.id === 'custom' ? b.name : '';
+    domainOut.textContent = b.id === 'custom' ? `Adresse imaginée : ${b.domain} · contact@${b.domain}` : '';
   }
 
   // --- Couleurs
@@ -119,6 +138,11 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
       commit();
     }),
   );
+  nameIn.addEventListener('input', () => {
+    state.brand = nameIn.value.trim() || DEFAULT.id;
+    RP.save(state);
+    applyBrand();
+  });
   const custom = () => { state.p = pIn.value; state.s = sIn.value; state.preset = ''; commit(); };
   pIn.addEventListener('input', custom);
   sIn.addEventListener('input', custom);
