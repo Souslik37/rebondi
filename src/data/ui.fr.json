@@ -76,7 +76,6 @@
     "dateUnavailable": "Ce château est déjà réservé à cette date. Choisissez une autre date ou un autre château.",
     "datePast": "Choisissez une date à partir de demain.",
     "unavailableListLabel": "Dates déjà réservées pour ce château :",
-    "unavailableNone": "Aucune date bloquée pour l'instant.",
     "message": "Message",
     "messageHint": "Occasion, âge et nombre d'enfants, heure de retrait souhaitée…",
     "submit": "Envoyer ma demande",

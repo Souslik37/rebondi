@@ -18,7 +18,6 @@ const availability = Object.fromEntries(
 const messages = {
   dateUnavailable: t.dateUnavailable,
   datePast: t.datePast,
-  unavailableNone: t.unavailableNone,
   whatsappIntro: t.whatsappIntro,
   labels: {
     chateau: t.chateau, formula: t.formula, date: t.date, address: t.address,
@@ -192,11 +191,8 @@ const radio = 'flex min-h-12 cursor-pointer items-center gap-3 rounded-2xl borde
     list.innerHTML = '';
     if (!a) return blocked.classList.add('hidden');
     const upcoming = a.dates.filter((d) => d >= date.min);
-    if (upcoming.length === 0) {
-      const li = document.createElement('li');
-      li.textContent = m.unavailableNone!;
-      list.append(li);
-    }
+    // Rien de réservé : on n'affiche pas l'encadré
+    if (upcoming.length === 0) return blocked.classList.add('hidden');
     for (const d of upcoming) {
       const li = document.createElement('li');
       li.textContent = a.labels[d] ?? d;
