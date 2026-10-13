@@ -1,7 +1,6 @@
 // Point d'entrée unique vers src/data/. Chaque fichier est validé au build :
 // un champ manquant ou mal typé fait échouer `npm run build` avec un message clair.
 import { z } from 'astro/zod';
-import { THEME_IDS, type ThemeId } from './themes';
 import type { ImageMetadata } from 'astro';
 import siteRaw from '../data/site.json';
 import chateauxRaw from '../data/chateaux.json';
@@ -15,7 +14,6 @@ const siteSchema = z.object({
   url: z.url(),
   basePath: z.string().regex(/^(\/[a-z0-9-]+)?$/, 'basePath : "" ou "/sous-dossier"'),
   demo: z.boolean(),
-  theme: z.enum(THEME_IDS as [ThemeId, ...ThemeId[]]),
   themePicker: z.boolean(),
   baseCity: z.string(),
   currency: z.string(),

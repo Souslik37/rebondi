@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
 import JsonLd from '../components/JsonLd.astro';
-import ThemePicker from '../components/ThemePicker.astro';
-import { THEME_IDS } from '../lib/themes';
+import PreviewPanel from '../components/PreviewPanel.astro';
+import previewRuntime from '../lib/preview-runtime.js?raw';
 import { site } from '../lib/data';
 import { ui, withBase, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
 import { localBusiness } from '../lib/jsonld';
@@ -25,20 +25,10 @@ const canonical = new URL(Astro.url.pathname, site.url).toString();
 const ogImageUrl = new URL(ogImage, site.url).toString();
 ---
 <!doctype html>
-<html lang={t.lang} data-theme={site.theme}>
+<html lang={t.lang}>
   <head>
     <meta charset="utf-8" />
-    {site.themePicker && (
-      <script is:inline define:vars={{ ids: THEME_IDS }}>
-        // Applique la palette choisie (?theme=… ou mémorisée) avant l'affichage, sans clignotement
-        try {
-          var q = new URLSearchParams(location.search).get('theme');
-          var t = ids.indexOf(q) > -1 ? q : localStorage.getItem('rebondi-theme');
-          if (q && ids.indexOf(q) > -1) localStorage.setItem('rebondi-theme', q);
-          if (t && ids.indexOf(t) > -1) document.documentElement.dataset.theme = t;
-        } catch (e) {}
-      </script>
-    )}
+    {site.themePicker && <script is:inline set:html={previewRuntime} />}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -70,6 +60,6 @@ const ogImageUrl = new URL(ogImage, site.url).toString();
     </main>
     <Footer locale={locale} />
     {!hideMobileBar && <MobileBar locale={locale} />}
-    {site.themePicker && <ThemePicker />}
+    {site.themePicker && <PreviewPanel />}
   </body>
 </html>

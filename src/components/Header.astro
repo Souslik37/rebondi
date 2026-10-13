@@ -17,9 +17,9 @@ const current = (href: string) => (href !== r.home && !href.includes('#') && pat
 ---
 <header class="sticky top-0 z-40 border-b-2 border-accent-soft bg-white/95 backdrop-blur">
   <div class="container-x flex h-16 items-center justify-between gap-4">
-    <a href={r.home} class="flex items-center gap-2.5 font-display text-2xl font-extrabold tracking-tight text-ink no-underline">
-      <Logo class="h-10 w-10" />
-      {site.name}
+    <a href={r.home} class="flex min-w-0 items-center gap-2.5 font-display text-[clamp(1.15rem,5.2vw,1.5rem)] leading-tight font-extrabold tracking-tight text-ink no-underline">
+      <Logo class="h-10 w-10 shrink-0" />
+      <span>{site.name}</span>
     </a>
     <nav aria-label={t.mainLabel} class="hidden md:block">
       <ul class="flex items-center gap-1">
