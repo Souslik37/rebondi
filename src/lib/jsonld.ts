@@ -1,5 +1,5 @@
 // Données structurées schema.org. Aucune note ni avis : on n'invente rien.
-import { site, communes, chateauImage, type Chateau } from './data';
+import { site, chateauImage, type Chateau } from './data';
 import { routes, withBase } from './i18n';
 import { isPlaceholder } from './format';
 
@@ -22,12 +22,11 @@ export function localBusiness() {
     ...clean({ telephone: site.contact.phoneE164, email: site.contact.email }),
     address: {
       '@type': 'PostalAddress',
-      ...clean({ streetAddress: a.street }),
       postalCode: a.postalCode,
       addressLocality: a.city,
       addressCountry: a.country,
     },
-    areaServed: communes.map((c) => ({ '@type': 'City', name: c.name })),
+    areaServed: site.fr.areaServed.map((name) => ({ '@type': 'City', name })),
     priceRange: '€€',
   };
 }
@@ -51,7 +50,7 @@ export function product(c: Chateau, imageUrls: string[]) {
     description: c.fr.description,
     image: imageUrls.map(abs),
     brand: { '@type': 'Brand', name: site.name },
-    offers: [offer('Location à la journée', c.priceDay), offer('Location week-end', c.priceWeekend)],
+    offers: [offer('Location week-end', c.price)],
   };
 }
 

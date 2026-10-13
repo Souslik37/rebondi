@@ -10,7 +10,7 @@ const p = t.pages.chateaux;
 ---
 <BaseLayout title={p.title} description={p.description}>
   <PageHeader title={p.h1} lead={p.lead}>
-    <p class="mt-3 text-muted">{site.fr.deliveryNote} {site.fr.weekendNote} {site.fr.priceNote}</p>
+    <p class="mt-3 text-muted">{site.fr.weekendNote} {site.fr.deliveryNote}</p>
   </PageHeader>
   <section class="container-x"><ChateauGrid items={chateaux} headingLevel="h2" /></section>
   <CtaBand />

@@ -1,74 +1,158 @@
 [
   {
-    "slug": "petit-donjon",
+    "slug": "monde-marin",
     "order": 1,
-    "dimensions": { "length": 3.5, "width": 3.5, "height": 2.6 },
-    "spaceRequired": { "length": 5, "width": 5 },
-    "ageMin": 2,
-    "ageMax": 6,
-    "capacity": 6,
-    "maxUserHeightCm": 120,
-    "priceDay": 110,
-    "priceWeekend": 170,
-    "power": "1 souffleur 230 V – 1 prise standard",
-    "certification": "EN 14960",
-    "images": ["petit-donjon/1.jpg", "petit-donjon/2.jpg"],
-    "unavailable": ["2026-10-10", "2026-10-17", "2026-10-31", "2026-11-14"],
-    "fr": {
-      "name": "Le Petit Donjon",
-      "short": "Un château compact et rassurant pour les tout-petits, avec murs filets tout autour.",
-      "description": "Le Petit Donjon est pensé pour les 2–6 ans : une surface de saut basse, des murs filets sur les quatre côtés pour que les parents gardent un œil sur tout, et une entrée avec marchepied. Il tient dans la plupart des jardins de ville.",
-      "idealFor": ["Anniversaires des tout-petits", "Baptêmes", "Petits jardins"],
-      "included": ["Souffleur électrique", "Bâche de protection au sol", "Piquets et sacs de lest", "Rallonge 25 m", "Livraison, installation et reprise", "Fiche de consignes de sécurité"],
-      "imageAlts": ["Illustration du Petit Donjon, château gonflable bleu et jaune à quatre tourelles", "Le Petit Donjon installé dans un jardin, vue de côté"]
-    }
-  },
-  {
-    "slug": "jungle",
-    "order": 2,
-    "dimensions": { "length": 5, "width": 4.5, "height": 3.5 },
-    "spaceRequired": { "length": 6.5, "width": 6 },
-    "ageMin": 3,
-    "ageMax": 10,
+    "dimensions": {
+      "length": 4.2,
+      "width": 3.2,
+      "height": 3.2
+    },
+    "spaceRequired": {
+      "length": 6.2,
+      "width": 5.2
+    },
     "capacity": 8,
-    "maxUserHeightCm": 150,
-    "priceDay": 160,
-    "priceWeekend": 240,
-    "power": "1 souffleur 230 V – 1 prise standard",
+    "weightKg": 54,
+    "packedSize": "0,6 × 0,8 m",
+    "price": 100,
+    "power": "1 soufflerie 1,1 kW, 1 prise 230 V",
     "certification": "EN 14960",
-    "images": ["jungle/1.jpg", "jungle/2.jpg"],
-    "unavailable": ["2026-10-11", "2026-10-24", "2026-11-01", "2026-11-21"],
+    "images": [
+      "monde-marin/1.jpg",
+      "monde-marin/2.jpg",
+      "monde-marin/3.jpg",
+      "monde-marin/4.jpg"
+    ],
+    "unavailable": [],
     "fr": {
-      "name": "La Jungle",
-      "short": "Zone de saut, petit toboggan et obstacles : le château polyvalent des anniversaires.",
-      "description": "La Jungle combine une grande zone de saut, deux obstacles gonflables et un toboggan intégré. C'est le château le plus demandé pour les anniversaires de 4 à 10 ans : assez grand pour un groupe, assez compact pour un jardin moyen.",
-      "idealFor": ["Anniversaires 3–10 ans", "Communions", "Fêtes de quartier"],
-      "included": ["Souffleur électrique", "Bâche de protection au sol", "Piquets et sacs de lest", "Rallonge 25 m", "Livraison, installation et reprise", "Fiche de consignes de sécurité"],
-      "imageAlts": ["Illustration de La Jungle, château gonflable vert avec toboggan", "La Jungle vue de face, avec son toboggan latéral"]
+      "name": "Midi Monde Marin",
+      "short": "Le plus compact des trois : un château aux couleurs de l'océan, parfait pour un jardin de ville.",
+      "description": "Le Midi Monde Marin est un château de saut bleu et jaune, décoré de dauphins et de tortues. Avec 4,2 × 3,2 m au sol, il se glisse dans la plupart des jardins. C'est aussi le plus léger : 54 kg dans son sac.",
+      "idealFor": [
+        "Anniversaires",
+        "Petits jardins",
+        "Premières fêtes"
+      ],
+      "included": [
+        "Soufflerie électrique 1,1 kW",
+        "Bâche de protection au sol",
+        "Piquets d'ancrage et maillet",
+        "Rallonge 25 m",
+        "Diable pour le transport",
+        "Fiche de consignes de sécurité"
+      ],
+      "imageAlts": [
+        "Midi Monde Marin, château gonflable bleu et jaune décoré de dauphins et de tortues",
+        "Midi Monde Marin gonflé en extérieur",
+        "Intérieur du Midi Monde Marin, la zone de saut",
+        "Détail de la décoration : un dauphin"
+      ]
     }
   },
   {
-    "slug": "grand-parcours",
+    "slug": "multifun-cirque",
     "order": 3,
-    "dimensions": { "length": 10, "width": 3.2, "height": 3.8 },
-    "spaceRequired": { "length": 11.5, "width": 5 },
-    "ageMin": 5,
-    "ageMax": 12,
-    "capacity": 10,
-    "maxUserHeightCm": 160,
-    "priceDay": 230,
-    "priceWeekend": 340,
-    "power": "2 souffleurs 230 V – 2 prises sur circuits séparés",
+    "dimensions": {
+      "length": 4.7,
+      "width": 4.2,
+      "height": 3.2
+    },
+    "spaceRequired": {
+      "length": 6.7,
+      "width": 6.2
+    },
+    "capacity": 9,
+    "weightKg": 96,
+    "packedSize": "0,8 × 0,7 m",
+    "price": 125,
+    "power": "1 soufflerie 1,1 kW, 1 prise 230 V",
     "certification": "EN 14960",
-    "images": ["grand-parcours/1.jpg", "grand-parcours/2.jpg"],
-    "unavailable": ["2026-10-09", "2026-10-16", "2026-11-28"],
+    "images": [
+      "multifun-cirque/1.jpg",
+      "multifun-cirque/2.jpg",
+      "multifun-cirque/3.jpg",
+      "multifun-cirque/4.jpg",
+      "multifun-cirque/5.jpg",
+      "multifun-cirque/6.jpg"
+    ],
+    "unavailable": [],
     "fr": {
-      "name": "Le Grand Parcours",
-      "short": "Un parcours d'obstacles de 10 m pour les grands, idéal pour les écoles et clubs.",
-      "description": "Le Grand Parcours aligne tunnels, slaloms et mur d'escalade sur 10 mètres, avant une descente en toboggan. Deux enfants peuvent s'y affronter côte à côte. Il demande un terrain long : parfait pour les cours d'école, les clubs sportifs et les événements d'entreprise.",
-      "idealFor": ["Écoles et mouvements de jeunesse", "Clubs sportifs", "Événements d'entreprise"],
-      "included": ["2 souffleurs électriques", "Bâche de protection au sol", "Piquets et sacs de lest", "2 rallonges 25 m", "Livraison, installation et reprise", "Fiche de consignes de sécurité"],
-      "imageAlts": ["Illustration du Grand Parcours, parcours d'obstacles gonflable rouge et orange", "Le Grand Parcours vu de profil, avec tunnels et toboggan final"]
+      "name": "Midi Multifun Cirque",
+      "short": "Le plus complet : zone de saut, obstacles et toboggan, sur le thème du cirque.",
+      "description": "Le Midi Multifun Cirque réunit une zone de saut, des obstacles à contourner et un toboggan, dans un décor de cirque rouge et jaune. Il accueille jusqu'à 9 enfants à la fois et demande un jardin d'environ 7 × 6 m.",
+      "idealFor": [
+        "Anniversaires",
+        "Communions",
+        "Grandes bandes d'enfants"
+      ],
+      "included": [
+        "Soufflerie électrique 1,1 kW",
+        "Bâche de protection au sol",
+        "Piquets d'ancrage et maillet",
+        "Rallonge 25 m",
+        "Diable pour le transport",
+        "Fiche de consignes de sécurité"
+      ],
+      "imageAlts": [
+        "Midi Multifun Cirque, château gonflable rouge et jaune avec toboggan",
+        "Midi Multifun Cirque gonflé en extérieur",
+        "Le toboggan du Midi Multifun Cirque",
+        "Les obstacles à l'intérieur du Midi Multifun Cirque",
+        "Détail de la décoration : un éléphant de cirque",
+        "Intérieur du Midi Multifun Cirque"
+      ]
+    }
+  },
+  {
+    "slug": "combo-jungle",
+    "order": 2,
+    "dimensions": {
+      "length": 5,
+      "width": 4,
+      "height": 3.2
+    },
+    "spaceRequired": {
+      "length": 7,
+      "width": 6
+    },
+    "capacity": 6,
+    "weightKg": 90,
+    "packedSize": "0,7 × 1 m",
+    "price": 120,
+    "power": "1 soufflerie 1,1 kW, 1 prise 230 V",
+    "certification": "EN 14960",
+    "images": [
+      "combo-jungle/1.jpg",
+      "combo-jungle/2.jpg",
+      "combo-jungle/3.jpg",
+      "combo-jungle/4.jpg",
+      "combo-jungle/5.jpg"
+    ],
+    "unavailable": [],
+    "fr": {
+      "name": "Combo Toboggan Jungle",
+      "short": "Zone de saut et toboggan dans un décor de jungle : le préféré des enfants qui bougent.",
+      "description": "Le Combo Toboggan Jungle associe une zone de saut et un toboggan, dans un décor de jungle avec girafe, lion et palmiers. Il accueille jusqu'à 6 enfants à la fois et demande un jardin d'environ 7 × 6 m.",
+      "idealFor": [
+        "Anniversaires",
+        "Fêtes de quartier",
+        "Enfants qui adorent glisser"
+      ],
+      "included": [
+        "Soufflerie électrique 1,1 kW",
+        "Bâche de protection au sol",
+        "Piquets d'ancrage et maillet",
+        "Rallonge 25 m",
+        "Diable pour le transport",
+        "Fiche de consignes de sécurité"
+      ],
+      "imageAlts": [
+        "Combo Toboggan Jungle, château gonflable vert et jaune avec toboggans",
+        "Combo Toboggan Jungle vu de côté",
+        "Combo Toboggan Jungle vu de face, avec son toboggan",
+        "Intérieur du Combo Toboggan Jungle",
+        "Décoration de jungle à l'intérieur : girafe, lion et palmiers"
+      ]
     }
   }
 ]

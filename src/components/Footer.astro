@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { site, communes } from '../lib/data';
+import { site } from '../lib/data';
 import { ui, routes, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
 import { rich } from '../lib/format';
 interface Props { locale?: Locale }
@@ -10,23 +10,23 @@ const r = routes(locale);
 const email = site.contact.email;
 const emailIsSet = !email.startsWith('[');
 ---
-<footer class="mt-24 bg-ink text-white">
+<footer class="mt-24 bg-forest text-white">
   <div class="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
     <div>
-      <p class="flex items-center gap-2 text-2xl font-black"><Logo class="h-9 w-9" />{site.name}</p>
+      <p class="flex items-center gap-2 font-display text-2xl font-extrabold"><Logo class="h-10 w-10" light />{site.name}</p>
       <p class="mt-3 text-white/85">{site.fr.tagline}</p>
     </div>
-    <nav aria-label={t.footer.zoneTitle}>
+    <div>
       <h2 class="mb-3 text-lg">{t.footer.zoneTitle}</h2>
-      <ul class="columns-2 gap-4 text-sm">
-        {communes.map((c) => <li class="mb-2"><a href={r.commune(c.slug)} class="text-white">{c.name}</a></li>)}
-      </ul>
-    </nav>
+      <p class="text-white/90">{t.footer.zoneText}</p>
+      <h2 class="mt-6 mb-3 text-lg">{t.footer.paymentTitle}</h2>
+      <p class="text-white/90">{site.fr.paymentNote}</p>
+    </div>
     <div>
       <h2 class="mb-3 text-lg">{t.footer.contactTitle}</h2>
       <ul class="space-y-2 text-white/90">
         <li>{site.owner.firstName}</li>
-        <li set:html={rich(site.contact.phoneDisplay)} />
+        <li><a href={`tel:${site.contact.phoneE164}`} class="text-white">{site.contact.phoneDisplay}</a></li>
         <li>{emailIsSet ? <a href={`mailto:${email}`} class="text-white">{email}</a> : <Fragment set:html={rich(email)} />}</li>
         <li>{site.legal.address.postalCode} {site.legal.address.city}</li>
       </ul>
@@ -44,7 +44,7 @@ const emailIsSet = !email.startsWith('[');
   </div>
   <div class="border-t border-white/15">
     <div class="container-x flex flex-col gap-2 py-5 text-sm text-white/80 sm:flex-row sm:justify-between">
-      <p>© {new Date().getFullYear()} {site.name} · {t.footer.bce} <span set:html={rich(site.legal.bce)} /></p>
+      <p>© {new Date().getFullYear()} {site.name}</p>
       <p>{t.footer.noCookies}</p>
     </div>
   </div>

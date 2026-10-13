@@ -9,25 +9,30 @@ const t = ui(locale).chateau;
 const H = headingLevel;
 const href = routes(locale).chateau(c.slug);
 ---
-<article class="card group relative flex flex-col overflow-hidden">
-  <Picture
-    src={chateauImage(c.images[0]!)}
-    alt={c.fr.imageAlts[0]!}
-    formats={['avif', 'webp']}
-    widths={[400, 640, 960]}
-    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-    class="aspect-[4/3] w-full object-cover"
-    loading={eager ? 'eager' : 'lazy'}
-  />
+<article class="group relative flex flex-col overflow-hidden rounded-[var(--radius-blob)] bg-cream transition hover:bg-accent-soft">
+  <div class="p-3 pb-0">
+    <Picture
+      src={chateauImage(c.images[0]!)}
+      alt={c.fr.imageAlts[0]!}
+      formats={['avif', 'webp']}
+      widths={[400, 640, 960]}
+      sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+      class="aspect-[4/3] w-full rounded-[1.25rem] object-cover"
+      loading={eager ? 'eager' : 'lazy'}
+    />
+  </div>
   <div class="flex flex-1 flex-col gap-3 p-6">
+    <div class="flex flex-wrap gap-2 text-sm font-semibold">
+      <span class="rounded-full bg-white px-3 py-1">{tpl(t.capacityValue, { n: c.capacity })}</span>
+      <span class="rounded-full bg-white px-3 py-1">{t.spaceShort} {dims(c.spaceRequired)}</span>
+    </div>
     <H class="text-2xl">
       <a href={href} class="text-ink no-underline after:absolute after:inset-0 group-hover:underline">{c.fr.name}</a>
     </H>
     <p class="text-muted">{c.fr.short}</p>
-    <dl class="mt-auto grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-      <div><dt class="font-bold">{t.age}</dt><dd>{tpl(t.ageValue, { min: c.ageMin, max: c.ageMax })}</dd></div>
-      <div><dt class="font-bold">{t.space}</dt><dd>{dims(c.spaceRequired)}</dd></div>
-    </dl>
-    <p class="text-lg"><span class="text-muted">{t.from}</span> <strong class="text-2xl font-black">{price(c.priceDay)}</strong></p>
+    <p class="mt-auto flex items-baseline justify-between border-t-2 border-dashed border-line pt-4">
+      <span class="text-muted">{t.from}</span>
+      <strong class="font-display text-2xl font-extrabold text-accent-ink">{price(c.price)}</strong>
+    </p>
   </div>
 </article>

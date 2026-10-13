@@ -9,7 +9,7 @@ const EXCLUDED = ['/mentions-legales/', '/merci/', '/404/'].map((p) => `${site.b
 
 export default defineConfig({
   site: site.url,
-  // Sous-dossier d'hébergement (GitHub Pages : /rebondi). Mettre "" pour un domaine propre.
+  // Sous-dossier d'hébergement (vide pour rebondi.be). Mettre "" pour un domaine propre.
   base: site.basePath || undefined,
   trailingSlash: 'always',
   build: { format: 'directory' },

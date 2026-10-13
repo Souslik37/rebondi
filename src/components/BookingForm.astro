@@ -1,7 +1,7 @@
 ---
 // Formulaire Netlify Forms. Fonctionne sans JavaScript (validation HTML native) ;
 // le script ajoute le blocage des dates indisponibles et le bouton WhatsApp pré-rempli.
-import { site, chateaux, communes } from '../lib/data';
+import { site, chateaux } from '../lib/data';
 import { ui, routes, DEFAULT_LOCALE, type Locale } from '../lib/i18n';
 import { whatsappUrl } from '../lib/contact';
 import { longDate } from '../lib/format';
@@ -18,12 +18,10 @@ const availability = Object.fromEntries(
 const messages = {
   dateUnavailable: t.dateUnavailable,
   datePast: t.datePast,
-  dateNotFriday: t.dateNotFriday,
-  dateWeekendUnavailable: t.dateWeekendUnavailable,
   unavailableNone: t.unavailableNone,
   whatsappIntro: t.whatsappIntro,
   labels: {
-    chateau: t.chateau, formula: t.formula, date: t.date, commune: t.commune, ground: t.ground,
+    chateau: t.chateau, formula: t.formula, date: t.date, city: t.city, address: t.address, lawn: t.lawn,
     access: t.access, power: t.power, name: t.name, phone: t.phone, message: t.message,
   },
 };
@@ -70,8 +68,8 @@ const yesNo = [
     <fieldset class="sm:col-span-2">
       <legend class="font-bold">{t.formula}<Req /></legend>
       <div class="mt-2 grid gap-3 sm:grid-cols-2">
-        <label class={radio}><input type="radio" name="formule" value="journee" required checked class="h-5 w-5 accent-[#b3341c]" />{t.formulaDay}</label>
-        <label class={radio}><input type="radio" name="formule" value="week-end" class="h-5 w-5 accent-[#b3341c]" />{t.formulaWeekend}</label>
+        <label class={radio}><input type="radio" name="formule" value="retrait" required checked class="h-5 w-5 accent-[#1d7a3e]" />{t.formulaPickup}</label>
+        <label class={radio}><input type="radio" name="formule" value="livraison" class="h-5 w-5 accent-[#1d7a3e]" />{t.formulaDelivery}</label>
       </div>
     </fieldset>
 
@@ -86,29 +84,23 @@ const yesNo = [
       </div>
     </div>
 
-    <div class="sm:col-span-2">
-      <label for="commune" class="font-bold">{t.commune}<Req /></label>
-      <select id="commune" name="commune" required class={field}>
-        <option value="">{t.communePlaceholder}</option>
-        {communes.map((c) => <option value={c.slug}>{c.name} ({c.postalCode})</option>)}
-        <option value="autre">{t.communeOther}</option>
-      </select>
+    <div class="sm:col-span-2" id="city-wrap">
+      <label for="commune" class="font-bold">{t.city}<Req /></label>
+      <input id="commune" name="commune" type="text" required autocomplete="address-level2" class={field} />
     </div>
 
-    <fieldset class="sm:col-span-2">
-      <legend class="font-bold">{t.ground}<Req /></legend>
-      <div class="mt-2 grid gap-3 sm:grid-cols-2">
-        <label class={radio}><input type="radio" name="sol" value="herbe" required class="h-5 w-5 accent-[#b3341c]" />{t.groundGrass}</label>
-        <label class={radio}><input type="radio" name="sol" value="dur" class="h-5 w-5 accent-[#b3341c]" />{t.groundHard}</label>
-      </div>
-    </fieldset>
+    <div class="sm:col-span-2 hidden" id="address-wrap">
+      <label for="adresse" class="font-bold">{t.address}<Req /></label>
+      <p id="address-hint" class="text-sm text-muted">{t.addressHint}</p>
+      <input id="adresse" name="adresse" type="text" autocomplete="street-address" class={field} aria-describedby="address-hint" />
+    </div>
 
-    {[{ name: 'acces', legend: t.access }, { name: 'prise', legend: t.power }].map((q) => (
+    {[{ name: 'pelouse', legend: t.lawn }, { name: 'acces', legend: t.access }, { name: 'prise', legend: t.power }].map((q) => (
       <fieldset class="sm:col-span-2" data-check>
         <legend class="font-bold">{q.legend}<Req /></legend>
         <div class="mt-2 grid gap-3 sm:grid-cols-3">
           {yesNo.map((o, i) => (
-            <label class={radio}><input type="radio" name={q.name} value={o.value} required={i === 0} class="h-5 w-5 accent-[#b3341c]" />{o.label}</label>
+            <label class={radio}><input type="radio" name={q.name} value={o.value} required={i === 0} class="h-5 w-5 accent-[#1d7a3e]" />{o.label}</label>
           ))}
         </div>
         <p class="check-warning mt-2 hidden rounded-2xl bg-sun/60 p-3 text-sm" aria-live="polite">{t.checkWarning}</p>
@@ -163,19 +155,15 @@ const yesNo = [
   const m = data.messages;
   const form = document.getElementById('booking-form') as HTMLFormElement;
   const chateau = form.querySelector<HTMLSelectElement>('#chateau')!;
-  const commune = form.querySelector<HTMLSelectElement>('#commune')!;
+  const commune = form.querySelector<HTMLInputElement>('#commune')!;
+  const address = form.querySelector<HTMLInputElement>('#adresse')!;
+  const addressWrap = form.querySelector<HTMLElement>('#address-wrap')!;
   const date = form.querySelector<HTMLInputElement>('#date')!;
   const dateError = form.querySelector<HTMLElement>('#date-error')!;
   const blocked = form.querySelector<HTMLElement>('#date-blocked')!;
   const summary = form.querySelector<HTMLElement>('#error-summary')!;
   const wa = document.getElementById('wa-link') as HTMLAnchorElement;
 
-  const iso = (d: Date) => d.toISOString().slice(0, 10);
-  const addDays = (s: string, n: number) => {
-    const d = new Date(`${s}T00:00:00Z`);
-    d.setUTCDate(d.getUTCDate() + n);
-    return iso(d);
-  };
   const tomorrow = () => {
     const d = new Date();
     d.setDate(d.getDate() + 1);
@@ -183,26 +171,28 @@ const yesNo = [
   };
   date.min = tomorrow();
 
-  // Préremplissage depuis l'URL : /reserver/?chateau=jungle&commune=uccle
+  // Préremplissage depuis l'URL : /reserver/?chateau=combo-jungle&formule=livraison
   const params = new URLSearchParams(location.search);
-  for (const [key, el] of [['chateau', chateau], ['commune', commune]] as const) {
-    const v = params.get(key);
-    if (v && [...el.options].some((o) => o.value === v)) el.value = v;
-  }
+  const ch = params.get('chateau');
+  if (ch && [...chateau.options].some((o) => o.value === ch)) chateau.value = ch;
+  const fo = params.get('formule');
+  const foInput = fo ? form.querySelector<HTMLInputElement>(`input[name="formule"][value="${CSS.escape(fo)}"]`) : null;
+  if (foInput) foInput.checked = true;
 
-  const formula = () => (form.querySelector<HTMLInputElement>('input[name="formule"]:checked')?.value ?? 'journee');
+  const formula = () => (form.querySelector<HTMLInputElement>('input[name="formule"]:checked')?.value ?? 'retrait');
+
+  function updateDelivery() {
+    const delivery = formula() === 'livraison';
+    addressWrap.classList.toggle('hidden', !delivery);
+    address.required = delivery;
+  }
 
   function dateProblem(): string {
     const v = date.value;
     if (!v) return '';
     if (v < date.min) return m.datePast!;
     const a = data.availability[chateau.value];
-    if (formula() === 'week-end') {
-      if (new Date(`${v}T00:00:00Z`).getUTCDay() !== 5) return m.dateNotFriday!;
-      if (a && [0, 1, 2, 3].some((n) => a.dates.includes(addDays(v, n)))) return m.dateWeekendUnavailable!;
-    } else if (a?.dates.includes(v)) {
-      return m.dateUnavailable!;
-    }
+    if (a?.dates.includes(v)) return m.dateUnavailable!;
     return '';
   }
 
@@ -249,8 +239,9 @@ const yesNo = [
       [m.labels.chateau!, optText(chateau)],
       [m.labels.formula!, radioText('formule')],
       [m.labels.date!, String(fd.get('date') ?? '')],
-      [m.labels.commune!, optText(commune)],
-      [m.labels.ground!, radioText('sol')],
+      [m.labels.city!, commune.value],
+      [m.labels.address!, formula() === 'livraison' ? address.value : ''],
+      [m.labels.lawn!, radioText('pelouse')],
       [m.labels.access!, radioText('acces')],
       [m.labels.power!, radioText('prise')],
       [m.labels.name!, String(fd.get('nom') ?? '')],
@@ -265,6 +256,7 @@ const yesNo = [
   }
 
   form.addEventListener('change', () => {
+    updateDelivery();
     renderBlocked();
     checkDate();
     updateWarnings();
@@ -314,6 +306,7 @@ const yesNo = [
     }
   });
 
+  updateDelivery();
   renderBlocked();
   updateWa();
 </script>

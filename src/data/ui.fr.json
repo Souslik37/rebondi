@@ -5,7 +5,7 @@
   "nav": {
     "home": "Accueil",
     "chateaux": "Châteaux",
-    "zone": "Zone desservie",
+    "zone": "Retrait et livraison",
     "faq": "FAQ",
     "about": "À propos",
     "book": "Réserver",
@@ -22,50 +22,43 @@
     "allFaq": "Toutes les questions",
     "conditions": "Lire les conditions de location",
     "finalTitle": "Une date en tête ?",
-    "finalText": "Envoyez votre demande en deux minutes. Alex vous répond sous 24 heures."
+    "finalText": "Envoyez votre demande en deux minutes. Alexandre vous répond sous 24 heures."
   },
   "chateau": {
     "dimensions": "Dimensions (L × l × H)",
-    "space": "Espace requis au sol",
-    "age": "Âge",
-    "ageValue": "{min} à {max} ans",
+    "space": "Espace nécessaire",
     "capacity": "Capacité",
-    "capacityValue": "{n} enfants à la fois",
-    "maxHeight": "Taille maximale",
+    "capacityValue": "jusqu'à {n} enfants",
     "power": "Électricité",
     "certification": "Norme",
-    "priceDay": "La journée",
-    "priceWeekend": "Le week-end",
-    "from": "À partir de",
+    "from": "Le week-end",
     "included": "Ce qui est inclus",
     "idealFor": "Idéal pour",
     "specsTitle": "Caractéristiques",
     "pricesTitle": "Tarifs",
     "others": "Les autres châteaux",
     "gallery": "Photos",
-    "breadcrumb": "Fil d'Ariane"
+    "breadcrumb": "Fil d'Ariane",
+    "price": "Le week-end",
+    "weight": "Poids (dans son sac)",
+    "packed": "Taille du sac",
+    "spaceHint": "Château + 1 m de marge tout autour, sur pelouse.",
+    "spaceShort": "Espace"
   },
   "home": {
     "promiseTitle": "Ce que Rebondi vous promet",
-    "stepsTitle": "Comment ça marche",
-    "chateauxTitle": "Les châteaux",
-    "chateauxIntro": "Chaque fiche indique l'espace nécessaire, l'âge conseillé et les tarifs. Pas de surprise le jour J.",
-    "zoneTitle": "Zone desservie",
-    "zoneIntro": "Livraison au forfait de 15 € dans ces dix communes du sud de Bruxelles et du Brabant :",
-    "faqTitle": "Questions fréquentes"
-  },
-  "commune": {
-    "h1": "Location de château gonflable à {name}",
-    "lead": "Livraison, installation et reprise à {name} ({cp}) par Alex, au départ d'Uccle.",
-    "chateauxTitle": "Châteaux disponibles à {name}",
-    "practicalTitle": "Infos pratiques",
-    "tipTitle": "Le conseil d'Alex",
-    "nearbyTitle": "Communes voisines desservies",
-    "deliveryLabel": "Livraison à {name}"
+    "stepsTitle": "Comment ça se passe",
+    "chateauxTitle": "Nos 3 châteaux",
+    "chateauxIntro": "Prix pour un week-end, matériel inclus. Chaque fiche indique l'espace nécessaire et le nombre d'enfants.",
+    "zoneTitle": "Retrait à Genval, livraison sur demande",
+    "zoneIntro": "Vous venez chercher le château à Genval et vous le ramenez après la fête. Vous préférez qu'on vous l'apporte ? La livraison est possible selon votre adresse : contactez-nous et on vous donne un prix.",
+    "faqTitle": "Questions fréquentes",
+    "heroEyebrow": "Uccle · Genval · Lasne · La Hulpe · Waterloo",
+    "zoneCta": "Demander une livraison"
   },
   "form": {
     "title": "Votre demande",
-    "intro": "Tous les champs marqués d'un astérisque sont obligatoires. Ce n'est pas encore une réservation : Alex vous confirme la disponibilité sous 24 heures.",
+    "intro": "Les champs marqués d'un astérisque sont obligatoires. Ce n'est pas encore une réservation : Alexandre vous confirme la disponibilité sous 24 heures. Rien à payer maintenant.",
     "required": "obligatoire",
     "name": "Votre prénom et nom",
     "phone": "Téléphone",
@@ -73,106 +66,97 @@
     "email": "E-mail (facultatif)",
     "chateau": "Château",
     "chateauPlaceholder": "Choisissez un château",
-    "formula": "Formule",
-    "formulaDay": "Journée",
-    "formulaWeekend": "Week-end (vendredi → lundi)",
+    "formula": "Retrait ou livraison",
     "date": "Date de la fête",
-    "dateHint": "Pour le week-end, choisissez le vendredi de livraison.",
+    "dateHint": "Le prix est le même pour tout le week-end.",
     "dateUnavailable": "Ce château est déjà réservé à cette date. Choisissez une autre date ou un autre château.",
     "datePast": "Choisissez une date à partir de demain.",
-    "dateNotFriday": "Pour la formule week-end, choisissez le vendredi de livraison.",
-    "dateWeekendUnavailable": "Ce château n'est pas libre sur tout ce week-end. Choisissez un autre vendredi ou un autre château.",
     "unavailableListLabel": "Dates déjà réservées pour ce château :",
     "unavailableNone": "Aucune date bloquée pour l'instant.",
-    "commune": "Commune",
-    "communePlaceholder": "Choisissez votre commune",
-    "communeOther": "Autre commune (préciser dans le message)",
-    "ground": "Type de sol",
-    "groundGrass": "Herbe",
-    "groundHard": "Sol dur (pavés, béton…)",
     "access": "Le passage jusqu'à l'emplacement fait-il au moins 1 m de large ?",
     "power": "Y a-t-il une prise électrique à moins de 25 m ?",
     "yes": "Oui",
     "no": "Non",
     "unsure": "Je ne sais pas",
-    "checkWarning": "Pas de souci : précisez la situation dans le message, Alex trouvera une solution avec vous ou vous dira honnêtement si ce n'est pas possible.",
+    "checkWarning": "Précisez la situation dans le message. Nos châteaux s'installent uniquement sur pelouse : Alexandre vous dira honnêtement si c'est possible.",
     "message": "Message",
-    "messageHint": "Occasion, nombre d'enfants, horaires souhaités, particularités du terrain…",
+    "messageHint": "Occasion, âge et nombre d'enfants, heure de retrait souhaitée…",
     "submit": "Envoyer ma demande",
     "orWhatsapp": "Vous préférez WhatsApp ?",
     "whatsappText": "Le bouton ci-dessous ouvre WhatsApp avec votre demande pré-remplie.",
-    "whatsappIntro": "Bonjour Alex, je souhaite réserver un château gonflable.",
+    "whatsappIntro": "Bonjour Alexandre, je souhaite réserver un château gonflable Rebondi.",
     "privacy": "Vos données servent uniquement à traiter votre demande.",
     "privacyLink": "Politique de confidentialité",
-    "errorSummary": "Le formulaire contient des erreurs :"
+    "errorSummary": "Le formulaire contient des erreurs :",
+    "formulaPickup": "Je viens le chercher à Genval",
+    "formulaDelivery": "Je souhaite une livraison (prix sur demande)",
+    "city": "Commune de la fête",
+    "address": "Adresse de livraison",
+    "addressHint": "Nécessaire pour calculer le prix de la livraison.",
+    "lawn": "Le château sera-t-il installé sur une pelouse ?"
   },
   "pages": {
     "home": {
-      "title": "Location de château gonflable à Uccle et au sud de Bruxelles | Rebondi",
-      "description": "Châteaux gonflables livrés, installés et repris à Uccle, Ixelles, Waterloo, La Hulpe et alentours. Matériel certifié EN 14960, un seul interlocuteur : Alex.",
-      "h1": "Le château gonflable, sans la logistique",
-      "lead": "Rebondi livre, installe et reprend votre château gonflable au sud de Bruxelles. Vous vous occupez de la fête, Alex s'occupe du reste."
+      "title": "Location de château gonflable à Uccle, Genval et dans le Brabant wallon | Rebondi",
+      "description": "Châteaux gonflables neufs à louer pour le week-end, dès 100 €. Retrait à Genval, livraison possible sur demande. Norme EN 14960, annulation gratuite.",
+      "h1": "Un château gonflable pour le week-end, dès 100 €",
+      "lead": "Trois châteaux neufs, prix fixe, matériel inclus. Vous venez le chercher à Genval, ou on vous le livre sur demande."
     },
     "chateaux": {
       "title": "Nos châteaux gonflables à louer : dimensions et prix | Rebondi",
-      "description": "Tous les châteaux gonflables Rebondi : dimensions, espace requis, âge conseillé, capacité et prix à la journée ou au week-end. Livraison au sud de Bruxelles.",
+      "description": "Les 3 châteaux gonflables Rebondi : dimensions, espace nécessaire, nombre d'enfants et prix pour le week-end. Retrait à Genval, livraison sur demande.",
       "h1": "Les châteaux gonflables",
-      "lead": "Trois châteaux pour l'instant, des tout-petits aux grands. Comparez l'espace requis avec votre jardin avant de choisir."
+      "lead": "Trois châteaux neufs, du plus compact au plus grand. Comparez l'espace nécessaire avec votre jardin avant de choisir."
     },
     "chateau": {
-      "title": "{name} : location château gonflable {min}–{max} ans | Rebondi",
-      "description": "{name} : {length} × {width} m, {min} à {max} ans, {capacity} enfants. {priceDay} € la journée, {priceWeekend} € le week-end, installation et reprise incluses."
-    },
-    "commune": {
-      "title": "Location château gonflable à {name} ({cp}) | Rebondi"
+      "title": "{name} : location château gonflable, {price} € le week-end | Rebondi",
+      "description": "{name} : {length} × {width} m, jusqu'à {capacity} enfants. {price} € le week-end, soufflerie, bâche, piquets et rallonge inclus. Retrait à Genval."
     },
     "reserver": {
       "title": "Réserver un château gonflable : demande de date | Rebondi",
-      "description": "Demandez une date pour votre château gonflable : formulaire en deux minutes ou WhatsApp. Réponse d'Alex sous 24 heures, sans paiement en ligne.",
+      "description": "Demandez une date pour votre château gonflable : formulaire en deux minutes ou WhatsApp. Réponse sous 24 heures, rien à payer en ligne.",
       "h1": "Demander une date",
-      "lead": "Remplissez le formulaire ou écrivez directement sur WhatsApp. Alex vérifie la disponibilité et vous répond sous 24 heures."
+      "lead": "Remplissez le formulaire ou écrivez directement sur WhatsApp. Alexandre vérifie la disponibilité et vous répond sous 24 heures."
     },
     "merci": {
       "title": "Demande envoyée | Rebondi",
       "description": "Votre demande de réservation a bien été envoyée.",
       "h1": "Merci, votre demande est envoyée",
-      "lead": "Alex vous répond sous 24 heures par téléphone, WhatsApp ou e-mail. Pensez à vérifier vos courriers indésirables.",
+      "lead": "Alexandre vous répond sous 24 heures par téléphone, WhatsApp ou e-mail. Pensez à vérifier vos courriers indésirables.",
       "back": "Retour à l'accueil"
     },
     "about": {
-      "title": "À propos : Alex, votre interlocuteur unique | Rebondi",
-      "description": "Rebondi, c'est Alex, basé à Uccle : pourquoi ce projet et quels engagements de sécurité pour chaque location de château gonflable.",
-      "h1": "Bonjour, moi c'est Alex",
-      "photoAlt": "[PHOTO D'ALEX] Portrait d'Alex, fondateur de Rebondi",
+      "title": "À propos : Alexandre, fondateur de Rebondi | Rebondi",
+      "description": "Rebondi, c'est Alexandre, basé à Uccle : des châteaux gonflables neufs, des prix clairs et des engagements de sécurité pour chaque location.",
+      "h1": "Bonjour, c'est Alexandre",
+      "photoAlt": "[PHOTO D'ALEX] Portrait d'Alexandre, fondateur de Rebondi",
       "whyTitle": "Pourquoi Rebondi",
       "why": [
-        "[POURQUOI CE PROJET : 2 à 4 phrases écrites par Alex, à la première personne.]",
-        "[CE QUI DIFFÉRENCIE REBONDI SELON ALEX : par exemple le fait d'être un seul interlocuteur, du début à la fin.]"
+        "J'habite Uccle et j'ai lancé Rebondi avec une idée simple : louer de beaux châteaux gonflables, neufs et certifiés, à un prix clair, sans mauvaise surprise.",
+        "Vous venez chercher le château à Genval, je vous montre comment l'installer, et vous profitez de votre week-end. Si vous préférez, je peux aussi vous le livrer selon votre adresse."
       ],
       "safetyTitle": "Mes engagements sécurité",
       "safety": [
-        "Uniquement du matériel conforme à la norme européenne EN 14960.",
-        "Un contrôle visuel complet (coutures, ancrages, souffleur) avant chaque location.",
-        "Installation et ancrage toujours réalisés par moi, jamais laissés au client.",
-        "Une fiche de consignes de sécurité remise et expliquée à chaque installation.",
-        "Pas d'installation si le vent dépasse le seuil de sécurité du fabricant : je préfère reporter que prendre un risque.",
-        "Nettoyage et désinfection des surfaces de jeu après chaque location."
+        "Uniquement des châteaux neufs, conformes à la norme européenne EN 14960.",
+        "Un contrôle visuel (coutures, ancrages, soufflerie) avant chaque location.",
+        "Au retrait, je vous explique l'installation et l'ancrage, et je vous remets une fiche de consignes de sécurité.",
+        "En cas de vent fort ou d'orage annoncé, on reporte sans frais : la sécurité des enfants passe avant tout."
       ]
     },
     "faq": {
       "title": "Questions fréquentes sur la location de château gonflable | Rebondi",
-      "description": "Espace nécessaire, électricité, sol dur, pluie, vent, surveillance, réservation : les réponses aux questions fréquentes sur la location de château gonflable.",
+      "description": "Espace nécessaire, retrait à Genval, livraison, électricité, pluie, vent, paiement, annulation : les réponses aux questions fréquentes.",
       "h1": "Questions fréquentes",
-      "lead": "Une question qui n'est pas ici ? Écrivez à Alex, il vous répond directement."
+      "lead": "Une question qui n'est pas ici ? Écrivez à Alexandre, il vous répond directement."
     },
     "conditions": {
-      "title": "Conditions de location : pluie, vent, caution, annulation | Rebondi",
-      "description": "Conditions de location des châteaux gonflables Rebondi : réservation, livraison, pluie, vent, caution, annulation et responsabilités.",
+      "title": "Conditions de location : retrait, paiement, annulation | Rebondi",
+      "description": "Conditions de location des châteaux gonflables Rebondi : réservation, retrait et retour, paiement, caution, annulation gratuite, météo et responsabilités.",
       "h1": "Conditions de location"
     },
     "mentions": {
       "title": "Mentions légales | Rebondi",
-      "description": "Mentions légales du site Rebondi : éditeur, numéro d'entreprise, hébergement.",
+      "description": "Mentions légales du site Rebondi : éditeur et hébergement.",
       "h1": "Mentions légales"
     },
     "confidentialite": {
@@ -183,24 +167,24 @@
     "notFound": {
       "title": "Page introuvable | Rebondi",
       "description": "Cette page n'existe pas ou a été déplacée.",
-      "h1": "Cette page a rebondi ailleurs",
-      "lead": "La page demandée n'existe pas ou a été déplacée.",
+      "h1": "Cette page a rebondi trop loin",
+      "lead": "Elle n'existe pas ou a été déplacée.",
       "back": "Retour à l'accueil"
     }
   },
   "footer": {
-    "zoneTitle": "Zone desservie",
+    "zoneTitle": "Retrait et livraison",
     "contactTitle": "Contact",
     "legalTitle": "Infos légales",
     "conditions": "Conditions de location",
     "mentions": "Mentions légales",
     "confidentialite": "Confidentialité",
-    "bce": "N° BCE",
-    "noCookies": "Ce site n'utilise aucun cookie."
+    "noCookies": "Ce site n'utilise aucun cookie.",
+    "zoneText": "Retrait à Genval. Livraison possible sur demande, selon l'adresse.",
+    "paymentTitle": "Paiement"
   },
   "common": {
     "currencySuffix": "€",
-    "tvac": "TVAC",
     "m": "m",
     "cm": "cm"
   }

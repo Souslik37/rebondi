@@ -1,11 +1,8 @@
 ## Éditeur du site
 
-- **Nom** : [DÉNOMINATION OU NOM DE L'INDÉPENDANT]
-- **Exploitant** : [NOM COMPLET DE L'EXPLOITANT]
-- **Adresse** : [RUE ET NUMÉRO], 1180 Uccle, Belgique
-- **Numéro d'entreprise (BCE)** : [N° BCE]
-- **TVA** : [N° TVA OU MENTION FRANCHISE]
-- **Téléphone** : [TÉLÉPHONE]
+- **Nom** : Alexandre Le Clercq, exploitant de Rebondi
+- **Localité** : 1180 Uccle, Belgique
+- **Téléphone** : 0478 46 44 10
 - **E-mail** : [E-MAIL]
 
 ## Hébergement
@@ -14,7 +11,7 @@ Le site est hébergé par Netlify, Inc. (États-Unis), netlify.com.
 
 ## Propriété intellectuelle
 
-Les textes et visuels de ce site sont la propriété de Rebondi, sauf mention contraire. Toute reproduction sans autorisation est interdite.
+Les textes de ce site sont la propriété de Rebondi. Les photos des châteaux sont fournies par leur fabricant, JB Gonflables. Toute reproduction sans autorisation est interdite.
 
 ## Données personnelles
 

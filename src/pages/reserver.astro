@@ -15,12 +15,12 @@ const p = t.pages.reserver;
       <ol class="card flex flex-col gap-5 p-7" role="list" aria-label={t.home.stepsTitle}>
         {site.fr.steps.map((s, i) => (
           <li class="flex gap-4">
-            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-black" aria-hidden="true">{i + 1}</span>
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent font-display font-extrabold text-white" aria-hidden="true">{i + 1}</span>
             <div><p class="font-extrabold">{s.title}</p><p class="text-sm text-muted">{s.text}</p></div>
           </li>
         ))}
       </ol>
-      <p class="rounded-3xl bg-accent-soft p-6 text-sm">{site.fr.deliveryNote} {site.fr.weekendNote} {site.fr.priceNote} <a href={routes().conditions}>{t.cta.conditions}</a></p>
+      <p class="rounded-3xl bg-accent-soft p-6 text-sm">{site.fr.deliveryNote} {site.fr.paymentNote} <a href={routes().conditions}>{t.cta.conditions}</a></p>
     </aside>
   </div>
 </BaseLayout>

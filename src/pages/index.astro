@@ -4,72 +4,91 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Promise from '../components/Promise.astro';
 import Steps from '../components/Steps.astro';
 import ChateauGrid from '../components/ChateauGrid.astro';
-import CommuneList from '../components/CommuneList.astro';
 import FaqList from '../components/FaqList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import GrassWave from '../components/GrassWave.astro';
 import { site, chateaux, faq, asset } from '../lib/data';
+import { whatsappUrl } from '../lib/contact';
+import { price } from '../lib/format';
 import { ui, routes } from '../lib/i18n';
 
 const t = ui();
 const r = routes();
 const p = t.pages.home;
+const minPrice = Math.min(...chateaux.map((c) => c.price));
 const homeFaq = faq.filter((f) => f.home).map((f) => ({ id: f.id, ...f.fr }));
 ---
 <BaseLayout title={p.title} description={p.description}>
-  <section class="container-x grid items-center gap-10 pt-8 pb-12 sm:pt-14 lg:grid-cols-[1.1fr_1fr]">
+  <section class="container-x grid items-center gap-10 pt-10 pb-6 sm:pt-16 lg:grid-cols-[1.05fr_1fr]">
     <div>
-      <p class="eyebrow mb-4">{site.fr.tagline}</p>
-      <h1 class="text-[2.6rem] leading-[1.05] sm:text-6xl">{p.h1}</h1>
+      <p class="eyebrow mb-5">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="currentColor" /></svg>
+        {t.home.heroEyebrow}
+      </p>
+      <h1 class="text-[2.6rem] leading-[1.02] sm:text-6xl">{p.h1}</h1>
       <p class="mt-5 max-w-xl text-xl text-muted">{p.lead}</p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <a href={r.reserver} class="btn-primary">{t.cta.book}</a>
-        <a href={r.chateaux} class="btn-secondary">{t.cta.seeChateaux}</a>
+        <a href="#chateaux" class="btn-secondary">{t.cta.seeChateaux}</a>
       </div>
-      <p class="mt-5 text-sm text-muted">{site.fr.deliveryNote} {site.fr.priceNote}</p>
+      <p class="mt-5 text-sm text-muted">{site.fr.paymentNote}</p>
     </div>
-    <Picture
-      src={asset('site/hero.jpg')}
-      alt=""
-      formats={['avif', 'webp']}
-      widths={[480, 720, 1080]}
-      sizes="(min-width: 1024px) 520px, 100vw"
-      class="aspect-[4/3] w-full rounded-[2.5rem] object-cover shadow-[0_10px_0_0_var(--color-accent-soft)]"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <div class="relative">
+      <Picture
+        src={asset('site/hero.jpg')}
+        alt="Château gonflable Rebondi gonflé en extérieur"
+        formats={['avif', 'webp']}
+        widths={[480, 720, 1080]}
+        sizes="(min-width: 1024px) 520px, 100vw"
+        class="aspect-[4/3] w-full rounded-[2rem] object-cover"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <p class="absolute -bottom-5 left-4 rounded-full bg-sun px-5 py-2 font-display text-lg font-extrabold text-ink shadow-sm">{t.chateau.from} · dès {price(minPrice)}</p>
+    </div>
   </section>
 
-  <section class="container-x" aria-labelledby="promise-title">
-    <h2 id="promise-title" class="sr-only">{t.home.promiseTitle}</h2>
-    <Promise />
-  </section>
-
-  <section class="container-x mt-20" aria-labelledby="steps-title">
-    <h2 id="steps-title" class="mb-8 text-3xl sm:text-4xl">{t.home.stepsTitle}</h2>
-    <Steps />
-  </section>
-
-  <section class="container-x mt-20" aria-labelledby="chateaux-title">
+  <section id="chateaux" class="container-x mt-16" aria-labelledby="chateaux-title">
     <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <h2 id="chateaux-title" class="text-3xl sm:text-4xl">{t.home.chateauxTitle}</h2>
         <p class="mt-2 max-w-xl text-muted">{t.home.chateauxIntro}</p>
       </div>
-      <a href={r.chateaux} class="font-bold">{t.cta.seeChateaux}</a>
     </div>
     <ChateauGrid items={chateaux} />
   </section>
 
-  <section id="zone" class="container-x mt-20" aria-labelledby="zone-title">
-    <h2 id="zone-title" class="text-3xl sm:text-4xl">{t.home.zoneTitle}</h2>
-    <p class="mt-2 mb-6 max-w-xl text-muted">{t.home.zoneIntro}</p>
-    <CommuneList />
+  <GrassWave class="mt-16" />
+  <div class="bg-cream pb-20">
+    <section class="container-x pt-6" aria-labelledby="promise-title">
+      <h2 id="promise-title" class="sr-only">{t.home.promiseTitle}</h2>
+      <Promise />
+    </section>
+
+    <section class="container-x mt-16" aria-labelledby="steps-title">
+      <h2 id="steps-title" class="mb-8 text-3xl sm:text-4xl">{t.home.stepsTitle}</h2>
+      <Steps />
+    </section>
+  </div>
+  <GrassWave color="var(--color-cream)" flip />
+
+  <section id="retrait" class="container-x mt-10" aria-labelledby="zone-title">
+    <div class="grid gap-6 rounded-[2rem] bg-accent-soft p-6 sm:p-10 md:grid-cols-[1.4fr_1fr] md:items-center">
+      <div>
+        <h2 id="zone-title" class="text-3xl sm:text-4xl">{t.home.zoneTitle}</h2>
+        <p class="mt-3 max-w-xl text-ink/80">{t.home.zoneIntro}</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href={`${r.reserver}?formule=livraison`} class="btn-primary">{t.home.zoneCta}</a>
+        <a href={whatsappUrl(t.form.whatsappIntro)} class="btn-whatsapp" rel="noopener" target="_blank">{t.cta.whatsapp}<span class="sr-only"> (nouvelle fenêtre)</span></a>
+      </div>
+    </div>
   </section>
 
   <section class="container-x mt-20 max-w-3xl" aria-labelledby="faq-title">
     <h2 id="faq-title" class="mb-6 text-3xl sm:text-4xl">{t.home.faqTitle}</h2>
     <FaqList items={homeFaq} />
-    <p class="mt-5"><a href={r.faq} class="font-bold">{t.cta.allFaq}</a></p>
+    <p class="mt-5"><a href={r.faq} class="font-semibold">{t.cta.allFaq}</a></p>
   </section>
 
   <CtaBand />

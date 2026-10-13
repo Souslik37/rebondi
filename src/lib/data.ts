@@ -4,7 +4,6 @@ import { z } from 'astro/zod';
 import type { ImageMetadata } from 'astro';
 import siteRaw from '../data/site.json';
 import chateauxRaw from '../data/chateaux.json';
-import communesRaw from '../data/communes.json';
 import faqRaw from '../data/faq.json';
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Format attendu : AAAA-MM-JJ');
@@ -17,7 +16,6 @@ const siteSchema = z.object({
   demo: z.boolean(),
   baseCity: z.string(),
   currency: z.string(),
-  deliveryFee: z.number(),
   owner: z.object({ firstName: z.string(), fullName: z.string(), photo: z.string() }),
   contact: z.object({
     phoneDisplay: z.string(),
@@ -27,10 +25,9 @@ const siteSchema = z.object({
   }),
   legal: z.object({
     companyName: z.string(),
-    bce: z.string(),
-    vat: z.string(),
-    address: z.object({ street: z.string(), postalCode: z.string(), city: z.string(), country: z.string() }),
+    address: z.object({ postalCode: z.string(), city: z.string(), country: z.string() }),
   }),
+  pickup: z.object({ city: z.string(), postalCode: z.string() }),
   fr: z.object({
     tagline: z.string(),
     demoNotice: z.string(),
@@ -39,6 +36,8 @@ const siteSchema = z.object({
     deliveryNote: z.string(),
     weekendNote: z.string(),
     priceNote: z.string(),
+    paymentNote: z.string(),
+    areaServed: z.array(z.string()),
   }),
 });
 
@@ -57,12 +56,10 @@ const chateauSchema = z
     order: z.number(),
     dimensions: z.object({ length: z.number(), width: z.number(), height: z.number() }),
     spaceRequired: z.object({ length: z.number(), width: z.number() }),
-    ageMin: z.number(),
-    ageMax: z.number(),
     capacity: z.number(),
-    maxUserHeightCm: z.number().optional(),
-    priceDay: z.number(),
-    priceWeekend: z.number(),
+    weightKg: z.number(),
+    packedSize: z.string(),
+    price: z.number(),
     power: z.string(),
     certification: z.string(),
     images: z.array(z.string()).min(1),
@@ -72,15 +69,6 @@ const chateauSchema = z
   .refine((c) => c.fr.imageAlts.length === c.images.length, {
     message: 'Il faut un texte alternatif (imageAlts) par image',
   });
-
-const communeSchema = z.object({
-  slug,
-  name: z.string(),
-  postalCode: z.string(),
-  region: z.string(),
-  nearby: z.array(slug),
-  fr: z.object({ metaDescription: z.string().max(170), intro: z.string(), tip: z.string() }),
-});
 
 const faqSchema = z.object({
   id: z.string(),
@@ -100,20 +88,9 @@ export const site = parse('site.json', siteSchema, siteRaw);
 export const chateaux = parse('chateaux.json', z.array(chateauSchema), chateauxRaw).sort(
   (a, b) => a.order - b.order,
 );
-export const communes = parse('communes.json', z.array(communeSchema), communesRaw);
 export const faq = parse('faq.json', z.array(faqSchema), faqRaw);
 
 export type Chateau = (typeof chateaux)[number];
-export type Commune = (typeof communes)[number];
-
-// Vérifications croisées
-for (const c of communes) {
-  for (const n of c.nearby) {
-    if (!communes.some((x) => x.slug === n)) {
-      throw new Error(`communes.json : « ${c.slug} » référence une commune voisine inconnue « ${n} »`);
-    }
-  }
-}
 
 // Images : résolues depuis src/assets/ pour être optimisées (AVIF/WebP) au build
 const assetFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/**/*.{jpg,jpeg,png,webp,avif}', {

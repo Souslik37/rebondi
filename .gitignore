@@ -3,3 +3,7 @@ dist/
 .astro/
 .netlify/
 .DS_Store
+
+# Documents de travail (ne pas publier)
+*Business plan*.pdf
+calculateur-livraison-rebondi.html

@@ -16,7 +16,7 @@ export function tpl(str: string, vars: Record<string, string | number>): string 
   return str.replace(/\{(\w+)\}/g, (_, k) => (k in vars ? String(vars[k]) : `{${k}}`));
 }
 
-/** Préfixe un chemin absolu avec le sous-dossier d'hébergement (ex. /rebondi). */
+/** Préfixe un chemin absolu avec le sous-dossier d'hébergement (vide pour un domaine propre). */
 export const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`;
 
 const ROUTES = {
@@ -24,7 +24,6 @@ const ROUTES = {
     home: withBase('/'),
     chateaux: withBase('/chateaux/'),
     chateau: (slug: string) => withBase(`/chateaux/${slug}/`),
-    commune: (slug: string) => withBase(`/location-chateau-gonflable-${slug}/`),
     reserver: withBase('/reserver/'),
     merci: withBase('/merci/'),
     about: withBase('/a-propos/'),

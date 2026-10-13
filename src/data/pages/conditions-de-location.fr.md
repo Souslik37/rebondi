@@ -1,61 +1,64 @@
 ## 1. Réservation
 
-La demande envoyée via le site ou WhatsApp n'engage ni le client ni Rebondi. La réservation devient ferme lorsque Alex la confirme par écrit (e-mail, SMS ou WhatsApp) [ET, LE CAS ÉCHÉANT, À LA RÉCEPTION DE L'ACOMPTE].
+La demande envoyée via le site ou WhatsApp n'engage ni le client ni Rebondi. La réservation devient ferme quand Alexandre la confirme par écrit (e-mail, SMS ou WhatsApp). Aucun paiement n'est demandé à la réservation.
 
-## 2. Prix et livraison
+## 2. Prix
 
-Les prix affichés sur le site sont exprimés en euros, toutes taxes comprises (TVAC).
+Le prix affiché sur chaque fiche est le prix de location pour un week-end. Il comprend le château, sa soufflerie, une bâche de protection, les piquets d'ancrage et un maillet, une rallonge de 25 m et un diable.
 
-- **Formule journée** : livraison le jour même, reprise en fin de journée [HORAIRES DE LA FORMULE JOURNÉE].
-- **Formule week-end** : livraison le vendredi, reprise le lundi [HORAIRES DE LIVRAISON ET DE REPRISE].
-- **Livraison** : forfait de 15 € dans les communes desservies (Uccle, Forest, Ixelles, Watermael-Boitsfort, Linkebeek, Rhode-Saint-Genèse, Waterloo, Braine-l'Alleud, Lasne, La Hulpe).
-- L'installation, l'ancrage et la reprise sont inclus.
+## 3. Retrait et retour
 
-Modalités de paiement : [MODALITÉS DE PAIEMENT].
+- Le château est retiré par le client à notre dépôt de Genval. L'adresse exacte est communiquée à la confirmation.
+- Les heures de retrait et de retour sont convenues ensemble au moment de la réservation.
+- Le château est rangé dans un sac, sur un diable. Le client prévoit un véhicule adapté (coffre de break ou de SUV).
+- Au retrait, Rebondi explique l'installation et l'ancrage, et remet une fiche de consignes de sécurité.
+- Le château est rendu complet, roulé dans son sac, à l'heure convenue.
 
-## 3. Conditions d'installation
+## 4. Livraison sur demande
 
-Le client garantit :
+La livraison, l'installation et la reprise sont possibles sur demande, selon l'adresse. Le prix est communiqué avant la confirmation de la réservation.
 
-- une surface plane, dégagée et débarrassée des objets pointus, correspondant au moins à l'« espace requis » indiqué sur la fiche du château ;
-- un passage d'au moins 1 mètre de large jusqu'à l'emplacement ;
-- une prise électrique 230 V à moins de 25 mètres ;
-- l'absence d'obstacle en hauteur (branches, câbles) au-dessus de la zone.
+## 5. Paiement
 
-Si ces conditions ne sont pas réunies le jour de l'installation, Alex peut refuser d'installer le château pour des raisons de sécurité. [CONSÉQUENCE FINANCIÈRE DANS CE CAS].
-
-## 4. Pluie
-
-Le château ne doit pas être utilisé sous une pluie forte : la surface devient glissante. En cas de pluie légère, l'utilisation reste possible à condition d'essuyer la surface. Si la pluie empêche totalement l'utilisation : [POLITIQUE PLUIE : report sans frais, avoir, remboursement partiel…].
-
-## 5. Vent
-
-Pour des raisons de sécurité, le château doit être évacué puis dégonflé dès que le vent dépasse [VITESSE DE VENT MAXIMALE, selon la notice du fabricant] km/h. Si des vents supérieurs à ce seuil sont annoncés pour le jour de la location, Alex peut annuler l'installation : [POLITIQUE VENT : report sans frais, remboursement…].
+Le paiement se fait au retrait du château, en espèces ou par QR code (Payconiq). Un reçu est remis pour chaque paiement. Aucun paiement n'est demandé en ligne ni à l'avance.
 
 ## 6. Caution
 
-[MONTANT DE LA CAUTION ET MODALITÉS : forme (virement, espèces), moment du versement, délai de restitution, cas de retenue].
+Une caution de 200 € est demandée au retrait, en espèces ou par QR code. Elle est rendue au retour du château s'il revient complet et en bon état. En cas de dégât ou d'élément manquant, le coût de la réparation ou du remplacement est retenu sur la caution.
 
-## 7. Annulation
+## 7. Annulation et report
 
-- **Par le client** : [CONDITIONS D'ANNULATION PAR LE CLIENT : délais et éventuels frais].
-- **Par Rebondi** : en cas de météo dangereuse (vent, orage) ou d'empêchement, Rebondi rembourse intégralement les sommes versées ou propose une autre date, au choix du client.
+- **Par le client** : l'annulation est gratuite, sans frais. Si le client a déjà payé, la location est reportée à une autre date libre.
+- **Par Rebondi** : en cas de météo dangereuse (vent fort, orage) ou d'empêchement, Rebondi propose une autre date ou rend les sommes déjà versées, au choix du client.
 
-## 8. Utilisation et surveillance
+## 8. Installation
+
+Le client s'engage à installer le château :
+
+- uniquement sur une pelouse plate, débarrassée des cailloux et objets pointus, au moins aussi grande que l'« espace nécessaire » indiqué sur la fiche du château ;
+- sans obstacle en hauteur (branches, câbles) au-dessus de la zone ;
+- à moins de 25 mètres d'une prise électrique 230 V ;
+- en l'ancrant avec tous les piquets fournis, selon les consignes reçues au retrait.
+
+## 9. Météo
+
+Le château ne doit pas être utilisé sous une forte pluie, par orage ou par vent fort. Dans ces cas, le client fait sortir les enfants, coupe la soufflerie et dégonfle le château. Si une météo dangereuse est annoncée pour la date réservée, la location est reportée sans frais.
+
+## 10. Utilisation et surveillance
 
 Le client s'engage à :
 
 - assurer la présence permanente d'un adulte responsable près du château pendant toute son utilisation ;
-- respecter la fiche de consignes remise à l'installation (nombre d'enfants maximum, âge, taille, pas de chaussures, de nourriture ni d'objets pointus) ;
-- ne pas déplacer le château ni modifier son ancrage ;
-- couper le souffleur et faire sortir les enfants en cas de vent, d'orage ou de problème.
+- respecter la fiche de consignes (nombre d'enfants maximum, pas de chaussures, de nourriture, de boissons ni d'objets pointus, petits et grands séparés) ;
+- ne pas utiliser le château la nuit ni le laisser gonflé sans surveillance ;
+- ne pas sous-louer ni prêter le château.
 
-## 9. Responsabilité
+## 11. Responsabilité
 
-[CLAUSE DE RESPONSABILITÉ ET D'ASSURANCE : à faire relire par un professionnel].
+Pendant la location, le château est sous la garde du client, qui en est responsable et en assure la surveillance. Le client répond des dégâts causés au château en dehors de l'usure normale.
 
-## 10. Droit applicable
+## 12. Droit applicable
 
-Les présentes conditions sont soumises au droit belge. [TRIBUNAUX COMPÉTENTS].
+Les présentes conditions sont soumises au droit belge.
 
-*Dernière mise à jour : [DATE DE MISE À JOUR].*
+*Dernière mise à jour : 13 octobre 2026.*

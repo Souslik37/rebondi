@@ -2,47 +2,78 @@
   "name": "Rebondi",
   "url": "https://souslik37.github.io",
   "basePath": "/rebondi",
-  "demo": true,
+  "demo": false,
   "baseCity": "Uccle",
   "currency": "EUR",
-  "deliveryFee": 15,
   "owner": {
-    "firstName": "Alex",
-    "fullName": "[NOM COMPLET DE L'EXPLOITANT]",
+    "firstName": "Alexandre",
+    "fullName": "Alexandre Le Clercq",
     "photo": "alex.jpg"
   },
   "contact": {
-    "phoneDisplay": "[TÉLÉPHONE]",
-    "phoneE164": "",
-    "whatsappE164": "",
+    "phoneDisplay": "0478 46 44 10",
+    "phoneE164": "+32478464410",
+    "whatsappE164": "+32478464410",
     "email": "[E-MAIL]"
   },
   "legal": {
-    "companyName": "[DÉNOMINATION OU NOM DE L'INDÉPENDANT]",
-    "bce": "[N° BCE]",
-    "vat": "[N° TVA OU MENTION FRANCHISE]",
+    "companyName": "Alexandre Le Clercq",
     "address": {
-      "street": "[RUE ET NUMÉRO]",
       "postalCode": "1180",
       "city": "Uccle",
       "country": "BE"
     }
   },
+  "pickup": {
+    "city": "Genval",
+    "postalCode": "1332"
+  },
   "fr": {
-    "tagline": "Châteaux gonflables livrés, installés et repris au sud de Bruxelles",
-    "demoNotice": "Site de démonstration : châteaux, prix et illustrations sont fictifs.",
+    "tagline": "Location de châteaux gonflables neufs entre Uccle et le Brabant wallon. Retrait à Genval, livraison possible sur demande.",
+    "demoNotice": "",
     "promise": [
-      { "title": "Installation et reprise incluses", "text": "Alex monte le château, vérifie l'ancrage, vous explique les consignes et revient le démonter." },
-      { "title": "Matériel certifié EN 14960", "text": "La norme européenne de sécurité des structures gonflables de jeu." },
-      { "title": "Un seul interlocuteur", "text": "De la demande à la reprise, vous parlez à Alex. Pas de centrale d'appel." }
+      {
+        "title": "Le prix affiché, c'est le prix",
+        "text": "Un prix fixe pour le week-end, rien à payer d'avance. Vous payez au retrait du château."
+      },
+      {
+        "title": "Châteaux neufs, norme EN 14960",
+        "text": "Du matériel neuf et certifié, avec soufflerie, piquets, bâche, rallonge et diable fournis."
+      },
+      {
+        "title": "Annulation gratuite",
+        "text": "Un empêchement ou une météo dangereuse ? Vous annulez sans frais ou vous reportez à une autre date."
+      }
     ],
     "steps": [
-      { "title": "Choisissez un château et une date", "text": "Vérifiez l'espace dont vous disposez, puis envoyez votre demande via le formulaire ou WhatsApp." },
-      { "title": "Alex confirme et installe", "text": "Confirmation sous 24 h. Le jour J, Alex livre, installe et ancre le château, puis vous donne les consignes de sécurité." },
-      { "title": "Les enfants rebondissent, on reprend", "text": "Vous profitez de la fête. Alex revient démonter et nettoyer : vous n'avez rien à ranger." }
+      {
+        "title": "Choisissez et réservez",
+        "text": "Vérifiez l'espace nécessaire dans votre jardin, puis envoyez votre date par le formulaire ou WhatsApp. Réponse sous 24 h."
+      },
+      {
+        "title": "Venez le chercher à Genval",
+        "text": "Le château tient dans un sac, sur un diable. Un coffre de break ou de SUV suffit. On vous montre comment l'installer."
+      },
+      {
+        "title": "Gonflez, sautez, ramenez",
+        "text": "Branchez la soufflerie, le château se gonfle en quelques minutes. Après la fête, vous le ramenez à l'heure convenue."
+      }
     ],
-    "deliveryNote": "Livraison forfaitaire de 15 € dans toute la zone desservie. Installation et reprise incluses.",
-    "weekendNote": "Formule week-end : livraison le vendredi, reprise le lundi.",
-    "priceNote": "Prix TVAC."
+    "deliveryNote": "Retrait à Genval. Livraison possible sur demande, selon votre adresse : contactez-nous pour un prix.",
+    "weekendNote": "Prix pour un week-end. Les heures de retrait et de retour sont convenues ensemble.",
+    "priceNote": "Rien à payer en ligne.",
+    "paymentNote": "Paiement au retrait du château, en espèces ou par QR code (Payconiq). Un reçu vous est remis.",
+    "areaServed": [
+      "Uccle",
+      "Genval",
+      "Rixensart",
+      "La Hulpe",
+      "Lasne",
+      "Waterloo",
+      "Genappe",
+      "Braine-l'Alleud",
+      "Overijse",
+      "Wavre"
+    ]
   }
 }

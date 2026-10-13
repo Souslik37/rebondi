@@ -3,8 +3,8 @@
 Site 100 % statique (Astro + Tailwind + TypeScript), déployé sur Netlify.
 **Tout le contenu se modifie dans `src/data/`**, sans toucher aux composants.
 
-> Version actuelle = **démonstration** (châteaux, prix et illustrations fictifs).
 > Les informations à compléter sont listées dans [TODO.md](TODO.md).
+> Le calculateur de livraison privé (`calculateur-livraison-rebondi.html`, à la racine) n'est pas publié : ouvre-le dans ton navigateur.
 
 ## Démarrer en local
 
@@ -24,9 +24,8 @@ introuvable), `npm run build` s'arrête et indique précisément le fichier et l
 
 | Fichier | Contenu |
 |---|---|
-| `src/data/site.json` | Nom, contact, n° BCE, adresse, frais de livraison, promesse, étapes |
+| `src/data/site.json` | Nom, contact, lieu de retrait, paiement, promesse, étapes |
 | `src/data/chateaux.json` | Châteaux : dimensions, prix, âge, inclus, photos, **dates bloquées** |
-| `src/data/communes.json` | Une entrée par commune desservie = une page `/location-chateau-gonflable-<commune>/` |
 | `src/data/faq.json` | Questions/réponses (`"home": true` = affichée aussi sur l'accueil) |
 | `src/data/ui.fr.json` | Libellés de l'interface, titres et descriptions SEO de chaque page, texte « À propos » |
 | `src/data/pages/*.fr.md` | Conditions de location, mentions légales, confidentialité (Markdown) |
@@ -49,12 +48,10 @@ jaune sur le site, et doit figurer dans `TODO.md` (sinon le build échoue).
   "order": 4,
   "dimensions": { "length": 4, "width": 4, "height": 3 },
   "spaceRequired": { "length": 5.5, "width": 5.5 },
-  "ageMin": 3,
-  "ageMax": 8,
   "capacity": 6,
-  "maxUserHeightCm": 140,
-  "priceDay": 130,
-  "priceWeekend": 195,
+  "weightKg": 80,
+  "packedSize": "0,7 × 0,8 m",
+  "price": 110,
   "power": "1 souffleur 230 V – 1 prise standard",
   "certification": "EN 14960",
   "images": ["mon-chateau/1.jpg", "mon-chateau/2.jpg"],
@@ -64,7 +61,7 @@ jaune sur le site, et doit figurer dans `TODO.md` (sinon le build échoue).
     "short": "Une phrase pour la carte.",
     "description": "Deux ou trois phrases pour la fiche.",
     "idealFor": ["Anniversaires", "Écoles"],
-    "included": ["Souffleur électrique", "Bâche de protection au sol", "Livraison, installation et reprise"],
+    "included": ["Souffleur électrique", "Bâche de protection au sol", "Diable pour le transport"],
     "imageAlts": ["Description de la photo 1", "Description de la photo 2"]
   }
 }
@@ -73,9 +70,9 @@ jaune sur le site, et doit figurer dans `TODO.md` (sinon le build échoue).
 - `slug` : l'adresse de la fiche (`/chateaux/mon-chateau/`), en minuscules et tirets.
 - `order` : position dans les listes.
 - `imageAlts` : une description par photo, dans le même ordre (accessibilité ; obligatoire).
-- Prix en euros TVAC, dimensions en mètres.
+- `price` : prix pour un week-end, en euros. Dimensions en mètres.
 
-La fiche, la carte sur l'accueil et les pages communes, le menu du formulaire, le
+La fiche, la carte sur l'accueil, le menu du formulaire, le
 schema.org Product/Offer et le sitemap sont générés automatiquement.
 
 ## Bloquer une date
@@ -97,13 +94,12 @@ Depuis le site GitHub, on peut aussi modifier le fichier directement dans le nav
 (icône crayon), ce qui déclenche le même redéploiement.
 
 ⚠️ Le site étant statique, les disponibilités ne sont à jour qu'après le redéploiement.
-C'est pourquoi le site parle de « demande », confirmée par Alex sous 24 h.
+C'est pourquoi le site parle de « demande », confirmée par Alexandre sous 24 h.
 
-## Ajouter une commune
+## Pages communes (archivées)
 
-Ajoutez une entrée dans `src/data/communes.json` avec un `slug`, un `postalCode`, la liste
-des communes voisines (`nearby`) et surtout un **texte `intro` unique** (pas de copier-coller
-d'une autre commune : Google pénalise le contenu dupliqué). `metaDescription` : 170 caractères maximum.
+Les anciennes pages par commune sont rangées dans `archive/` et ne sont plus publiées :
+le site indique maintenant « retrait à Genval, livraison sur demande ».
 
 ---
 
