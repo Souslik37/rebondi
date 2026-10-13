@@ -53,7 +53,7 @@
     "zoneTitle": "Retrait à Genval, livraison sur demande",
     "zoneIntro": "Vous venez chercher le château à Genval et vous le ramenez après la fête. Vous préférez qu'on vous l'apporte ? La livraison est possible selon votre adresse : contactez-nous et on vous donne un prix.",
     "faqTitle": "Questions fréquentes",
-    "heroEyebrow": "Uccle · Genval · Lasne · La Hulpe · Waterloo",
+    "heroEyebrow": "Bruxelles · Brabant wallon",
     "zoneCta": "Demander une livraison"
   },
   "form": {
@@ -97,7 +97,7 @@
   },
   "pages": {
     "home": {
-      "title": "Location de château gonflable à Uccle, Genval et dans le Brabant wallon | Rebondi",
+      "title": "Location de château gonflable à Bruxelles et dans le Brabant wallon | Rebondi",
       "description": "Châteaux gonflables neufs à louer pour le week-end, dès 100 €. Retrait à Genval, livraison possible sur demande. Norme EN 14960, annulation gratuite.",
       "h1": "Un château gonflable pour le week-end, dès 100 €",
       "lead": "Trois châteaux neufs, prix fixe, matériel inclus. Vous venez le chercher à Genval, ou on vous le livre sur demande."
@@ -127,12 +127,13 @@
     },
     "about": {
       "title": "À propos : Alexandre, fondateur de Rebondi | Rebondi",
-      "description": "Rebondi, c'est Alexandre, basé à Uccle : des châteaux gonflables neufs, des prix clairs et des engagements de sécurité pour chaque location.",
+      "description": "Rebondi, c'est Alexandre : des châteaux gonflables neufs, des prix clairs et tout le matériel fourni pour un week-end réussi.",
       "h1": "Bonjour, c'est Alexandre",
       "photoAlt": "[PHOTO D'ALEX] Portrait d'Alexandre, fondateur de Rebondi",
       "whyTitle": "Pourquoi Rebondi",
       "why": [
-        "J'habite Uccle et j'ai lancé Rebondi avec une idée simple : louer de beaux châteaux gonflables, neufs et certifiés, à un prix clair, sans mauvaise surprise.",
+        "J'ai des neveux qui adorent les châteaux gonflables : à chaque fête de famille, c'est là qu'on les retrouve, et c'est aussi là qu'on les entend rire le plus fort. C'est en les voyant que l'idée de Rebondi a germé : permettre à d'autres familles d'avoir la même chose dans leur jardin, sans complication.",
+        "J'ai donc choisi des châteaux neufs et certifiés, et surtout pensé à tout ce qu'il faut autour : vous repartez avec le diable pour le transporter, le maillet et les piquets pour l'ancrer, la rallonge, la bâche, et une fiche pour le replier. Vous n'avez rien à prévoir.",
         "Vous venez chercher le château à Genval, je vous montre comment l'installer, et vous profitez de votre week-end. Si vous préférez, je peux aussi vous le livrer selon votre adresse."
       ],
       "safetyTitle": "Mes engagements sécurité",

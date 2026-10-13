@@ -4,7 +4,7 @@ La demande envoyée via le site ou WhatsApp n'engage ni le client ni Rebondi. La
 
 ## 2. Prix
 
-Le prix affiché sur chaque fiche est le prix de location pour un week-end. Il comprend le château, sa soufflerie, une bâche de protection, les piquets d'ancrage et un maillet, une rallonge de 25 m et un diable.
+Le prix affiché sur chaque fiche est le prix de location pour un week-end. Il comprend le château, sa soufflerie, une bâche de protection, les piquets d'ancrage, un maillet, une rallonge de 25 m, un diable et une fiche expliquant comment replier le château.
 
 ## 3. Retrait et retour
 
@@ -12,7 +12,7 @@ Le prix affiché sur chaque fiche est le prix de location pour un week-end. Il c
 - Les heures de retrait et de retour sont convenues ensemble au moment de la réservation.
 - Le château est rangé dans un sac, sur un diable. Le client prévoit un véhicule adapté (coffre de break ou de SUV).
 - Au retrait, Rebondi explique l'installation et l'ancrage, et remet une fiche de consignes de sécurité.
-- Le château est rendu complet, roulé dans son sac, à l'heure convenue.
+- Le château est rendu complet, propre, replié selon la fiche fournie et rangé dans son sac, à l'heure convenue.
 
 ## 4. Livraison sur demande
 
@@ -20,16 +20,17 @@ La livraison, l'installation et la reprise sont possibles sur demande, selon l'a
 
 ## 5. Paiement
 
-Le paiement se fait au retrait du château, en espèces ou par QR code (Payconiq). Un reçu est remis pour chaque paiement. Aucun paiement n'est demandé en ligne ni à l'avance.
+Le paiement se fait au retrait du château, en espèces ou par QR code (Payconiq). Aucun paiement n'est demandé en ligne ni à l'avance.
 
 ## 6. Caution
 
-Une caution de 200 € est demandée au retrait, en espèces ou par QR code. Elle est rendue au retour du château s'il revient complet et en bon état. En cas de dégât ou d'élément manquant, le coût de la réparation ou du remplacement est retenu sur la caution.
+Une caution de 50 € est demandée au retrait, en espèces ou par QR code. Elle est rendue au retour du château s'il revient complet, propre et correctement replié. Si un élément manque ou si le château revient abîmé, la caution peut être retenue en tout ou en partie. Un dégât plus important (déchirure, brûlure…) reste à charge du client, comme prévu à l'article 11.
 
 ## 7. Annulation et report
 
-- **Par le client** : l'annulation est gratuite, sans frais. Si le client a déjà payé, la location est reportée à une autre date libre.
-- **Par Rebondi** : en cas de météo dangereuse (vent fort, orage) ou d'empêchement, Rebondi propose une autre date ou rend les sommes déjà versées, au choix du client.
+- **Météo** : si une forte pluie, un orage ou un vent fort sont annoncés pour le week-end réservé, le client prévient Rebondi et la location est reportée à un autre week-end libre, sans supplément.
+- **Autre empêchement** : aucun paiement n'étant demandé avant le retrait, le client est simplement invité à prévenir le plus tôt possible, afin que la date puisse être proposée à une autre famille.
+- **Par Rebondi** : en cas de météo dangereuse ou d'empêchement de son côté, Rebondi propose une autre date ou rend les sommes déjà versées, au choix du client.
 
 ## 8. Installation
 

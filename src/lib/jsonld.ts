@@ -26,7 +26,7 @@ export function localBusiness() {
       addressLocality: a.city,
       addressCountry: a.country,
     },
-    areaServed: site.fr.areaServed.map((name) => ({ '@type': 'City', name })),
+    areaServed: site.fr.areaServed.map((name) => ({ '@type': 'AdministrativeArea', name })),
     priceRange: '€€',
   };
 }

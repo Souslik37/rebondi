@@ -4,7 +4,7 @@
     "home": true,
     "fr": {
       "q": "Qu'est-ce qui est compris dans le prix ?",
-      "a": "Le château, sa soufflerie, une bâche de protection, les piquets d'ancrage et un maillet, une rallonge de 25 m et un diable pour le transporter. Le prix est fixe pour tout le week-end. Seule la livraison, si vous la demandez, est en plus."
+      "a": "Le château, sa soufflerie, une bâche de protection, les piquets d'ancrage, un maillet, une rallonge de 25 m, un diable pour le transporter et une fiche qui explique comment le replier. Le prix est fixe pour tout le week-end. Seule la livraison, si vous la demandez, est en plus."
     }
   },
   {
@@ -52,15 +52,15 @@
     "home": true,
     "fr": {
       "q": "Comment se passe le paiement ?",
-      "a": "Rien n'est payé en ligne ni à l'avance. Vous payez au retrait du château, en espèces ou par QR code (Payconiq), et vous recevez un reçu. Une caution de 200 € est demandée au retrait et rendue au retour du château."
+      "a": "Rien n'est payé en ligne ni à l'avance. Vous payez au retrait du château, en espèces ou par QR code (Payconiq). Une caution de 50 € est demandée au retrait et rendue au retour du château, s'il revient complet, propre et bien replié."
     }
   },
   {
     "id": "annulation",
     "home": true,
     "fr": {
-      "q": "Et si je dois annuler ?",
-      "a": "L'annulation est gratuite. Si vous avez déjà payé, on reporte votre location à une autre date libre."
+      "q": "Et si la météo ne suit pas ?",
+      "a": "Pluie battante, orage ou vent fort annoncés ? Prévenez-nous et on reporte votre location à un autre week-end libre, sans supplément. Comme rien n'est payé avant le retrait, vous ne perdez rien. Pour tout autre changement de programme, prévenez-nous le plus tôt possible : la date pourra profiter à une autre famille."
     }
   },
   {

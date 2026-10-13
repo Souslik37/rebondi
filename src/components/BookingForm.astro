@@ -68,8 +68,8 @@ const yesNo = [
     <fieldset class="sm:col-span-2">
       <legend class="font-bold">{t.formula}<Req /></legend>
       <div class="mt-2 grid gap-3 sm:grid-cols-2">
-        <label class={radio}><input type="radio" name="formule" value="retrait" required checked class="h-5 w-5 accent-[#1d7a3e]" />{t.formulaPickup}</label>
-        <label class={radio}><input type="radio" name="formule" value="livraison" class="h-5 w-5 accent-[#1d7a3e]" />{t.formulaDelivery}</label>
+        <label class={radio}><input type="radio" name="formule" value="retrait" required checked class="h-5 w-5 accent-[var(--color-accent-ink)]" />{t.formulaPickup}</label>
+        <label class={radio}><input type="radio" name="formule" value="livraison" class="h-5 w-5 accent-[var(--color-accent-ink)]" />{t.formulaDelivery}</label>
       </div>
     </fieldset>
 
@@ -100,7 +100,7 @@ const yesNo = [
         <legend class="font-bold">{q.legend}<Req /></legend>
         <div class="mt-2 grid gap-3 sm:grid-cols-3">
           {yesNo.map((o, i) => (
-            <label class={radio}><input type="radio" name={q.name} value={o.value} required={i === 0} class="h-5 w-5 accent-[#1d7a3e]" />{o.label}</label>
+            <label class={radio}><input type="radio" name={q.name} value={o.value} required={i === 0} class="h-5 w-5 accent-[var(--color-accent-ink)]" />{o.label}</label>
           ))}
         </div>
         <p class="check-warning mt-2 hidden rounded-2xl bg-sun/60 p-3 text-sm" aria-live="polite">{t.checkWarning}</p>

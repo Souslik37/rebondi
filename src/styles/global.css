@@ -17,7 +17,31 @@
   --color-forest: #123d25;       /* pied de page, bandeaux sombres */
   --color-sun: #ffe27a;
   --color-line: #dce7d5;
+  --color-on-accent: #ffffff;    /* texte posé sur un bouton accent */
   --radius-blob: 1.75rem;
+}
+
+/* Palettes alternatives (sélecteur de couleurs). Contrastes texte vérifiés WCAG AA.
+   La palette par défaut est celle du bloc @theme ci-dessus (« prairie »). */
+:root[data-theme='corail'] {
+  --color-cream: #fff8f0; --color-ink: #1e1b2e; --color-muted: #4a4560;
+  --color-accent: #ff6a4d; --color-on-accent: #1e1b2e; --color-accent-ink: #b3341c;
+  --color-accent-soft: #ffe3da; --color-meadow: #ffb199; --color-forest: #1e1b2e; --color-line: #f0e2d8;
+}
+:root[data-theme='abricot'] {
+  --color-cream: #fff9f5; --color-ink: #2b211c; --color-muted: #5e4e45;
+  --color-accent: #ff9466; --color-on-accent: #2b211c; --color-accent-ink: #a8461f;
+  --color-accent-soft: #ffede3; --color-meadow: #ffc4a3; --color-forest: #3d2b22; --color-line: #f3e3d8;
+}
+:root[data-theme='peche'] {
+  --color-cream: #eef5fb; --color-ink: #1c2b45; --color-muted: #4b5a70;
+  --color-accent: #ff8a5c; --color-on-accent: #1c2b45; --color-accent-ink: #b04318;
+  --color-accent-soft: #ffe8dc; --color-meadow: #a9d3f2; --color-forest: #1c2b45; --color-line: #dce6f0;
+}
+:root[data-theme='mandarine'] {
+  --color-cream: #fbf6ec; --color-ink: #2a2416; --color-muted: #5c5340;
+  --color-accent: #f7a23b; --color-on-accent: #2a2416; --color-accent-ink: #9a5300;
+  --color-accent-soft: #fff0d6; --color-meadow: #f9cb7a; --color-forest: #3a2f1e; --color-line: #efe4cf;
 }
 
 @layer base {
@@ -36,8 +60,8 @@
 @utility btn {
   @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 font-display text-lg font-bold no-underline transition;
 }
-@utility btn-primary { @apply btn bg-accent text-white hover:bg-forest; }
-@utility btn-secondary { @apply btn border-2 border-accent bg-white text-accent-ink hover:bg-accent-soft; }
+@utility btn-primary { @apply btn bg-accent text-on-accent hover:bg-forest hover:text-white; }
+@utility btn-secondary { @apply btn border-2 border-accent-ink bg-white text-accent-ink hover:bg-accent-soft; }
 @utility btn-whatsapp { @apply btn bg-[#1F7A4D] text-white hover:bg-[#17603C]; }
 @utility card { @apply rounded-[var(--radius-blob)] border-2 border-line bg-white; }
 @utility eyebrow { @apply inline-flex items-center gap-2 rounded-full bg-accent-soft px-3 py-1 text-sm font-bold text-accent-ink; }

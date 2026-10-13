@@ -3,6 +3,8 @@
   "url": "https://souslik37.github.io",
   "basePath": "/rebondi",
   "demo": false,
+  "theme": "prairie",
+  "themePicker": true,
   "baseCity": "Uccle",
   "currency": "EUR",
   "owner": {
@@ -29,7 +31,7 @@
     "postalCode": "1332"
   },
   "fr": {
-    "tagline": "Location de châteaux gonflables neufs entre Uccle et le Brabant wallon. Retrait à Genval, livraison possible sur demande.",
+    "tagline": "Location de châteaux gonflables neufs à Bruxelles et dans le Brabant wallon. Retrait à Genval, livraison possible sur demande.",
     "demoNotice": "",
     "promise": [
       {
@@ -38,11 +40,11 @@
       },
       {
         "title": "Châteaux neufs, norme EN 14960",
-        "text": "Du matériel neuf et certifié, avec soufflerie, piquets, bâche, rallonge et diable fournis."
+        "text": "Du matériel neuf et certifié. Vous repartez avec tout : soufflerie, piquets, maillet, bâche, rallonge et diable."
       },
       {
-        "title": "Annulation gratuite",
-        "text": "Un empêchement ou une météo dangereuse ? Vous annulez sans frais ou vous reportez à une autre date."
+        "title": "Météo capricieuse ? On reporte",
+        "text": "Pluie battante ou vent fort annoncés ? On déplace votre location à un autre week-end, sans supplément."
       }
     ],
     "steps": [
@@ -56,24 +58,16 @@
       },
       {
         "title": "Gonflez, sautez, ramenez",
-        "text": "Branchez la soufflerie, le château se gonfle en quelques minutes. Après la fête, vous le ramenez à l'heure convenue."
+        "text": "Branchez la soufflerie, le château se gonfle en quelques minutes. Après la fête, vous le repliez grâce à la fiche fournie et vous le ramenez à l'heure convenue."
       }
     ],
     "deliveryNote": "Retrait à Genval. Livraison possible sur demande, selon votre adresse : contactez-nous pour un prix.",
     "weekendNote": "Prix pour un week-end. Les heures de retrait et de retour sont convenues ensemble.",
     "priceNote": "Rien à payer en ligne.",
-    "paymentNote": "Paiement au retrait du château, en espèces ou par QR code (Payconiq). Un reçu vous est remis.",
+    "paymentNote": "Paiement au retrait du château, en espèces ou par QR code (Payconiq).",
     "areaServed": [
-      "Uccle",
-      "Genval",
-      "Rixensart",
-      "La Hulpe",
-      "Lasne",
-      "Waterloo",
-      "Genappe",
-      "Braine-l'Alleud",
-      "Overijse",
-      "Wavre"
+      "Bruxelles",
+      "Brabant wallon"
     ]
   }
 }

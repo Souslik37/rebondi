@@ -9,7 +9,7 @@ const icons = [
 <ul class="grid gap-3 sm:grid-cols-3" role="list">
   {site.fr.promise.map((p, i) => (
     <li class="flex items-start gap-3">
-      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white" aria-hidden="true">
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-on-accent" aria-hidden="true">
         <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d={icons[i % icons.length]} /></svg>
       </span>
       <div><p class="font-display font-bold">{p.title}</p><p class="text-sm text-muted">{p.text}</p></div>
