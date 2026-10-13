@@ -7,7 +7,7 @@ import ChateauGrid from '../components/ChateauGrid.astro';
 import FaqList from '../components/FaqList.astro';
 import CtaBand from '../components/CtaBand.astro';
 import GrassWave from '../components/GrassWave.astro';
-import { site, chateaux, faq, asset } from '../lib/data';
+import { site, chateaux, faq, chateauImage } from '../lib/data';
 import { whatsappUrl } from '../lib/contact';
 import { price } from '../lib/format';
 import { ui, routes } from '../lib/i18n';
@@ -16,6 +16,10 @@ const t = ui();
 const r = routes();
 const p = t.pages.home;
 const minPrice = Math.min(...chateaux.map((c) => c.price));
+// Photo d'accueil = le château vendu au prix affiché (« dès … »), pour rester honnête.
+// On prend sa 2e photo (en situation) si elle existe, sinon la 1re.
+const heroChateau = chateaux.find((c) => c.price === minPrice)!;
+const heroIndex = heroChateau.images.length > 1 ? 1 : 0;
 const homeFaq = faq.filter((f) => f.home).map((f) => ({ id: f.id, ...f.fr }));
 ---
 <BaseLayout title={p.title} description={p.description}>
@@ -35,8 +39,8 @@ const homeFaq = faq.filter((f) => f.home).map((f) => ({ id: f.id, ...f.fr }));
     </div>
     <div class="relative">
       <Picture
-        src={asset('site/hero.jpg')}
-        alt="Château gonflable Rebondi gonflé en extérieur"
+        src={chateauImage(heroChateau.images[heroIndex]!)}
+        alt={heroChateau.fr.imageAlts[heroIndex]!}
         formats={['avif', 'webp']}
         widths={[480, 720, 1080]}
         sizes="(min-width: 1024px) 520px, 100vw"
