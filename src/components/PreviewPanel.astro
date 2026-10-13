@@ -117,9 +117,9 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
   // --- Couleurs
   const css = (v: string) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
   function syncColorInputs() {
-    pIn.value = state.p ?? css('--color-accent') ?? '#1d7a3e';
-    sIn.value = state.s ?? css('--color-forest') ?? '#123d25';
-    panel.querySelectorAll<HTMLInputElement>('input[name="pv-preset"]').forEach((r) => (r.checked = r.value === (state.preset || (!state.p ? 'prairie' : ''))));
+    pIn.value = state.p ?? css('--color-accent') ?? '#ff8f7a';
+    sIn.value = state.s ?? '#7fb8e6';
+    panel.querySelectorAll<HTMLInputElement>('input[name="pv-preset"]').forEach((r) => (r.checked = r.value === (state.preset || (!state.p ? 'defaut' : ''))));
   }
   function commit() {
     RP.applyColors(state);
@@ -133,7 +133,7 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
   );
   panel.querySelectorAll<HTMLInputElement>('input[name="pv-preset"]').forEach((r) =>
     r.addEventListener('change', () => {
-      if (r.value === 'prairie') { delete state.p; delete state.s; state.preset = 'prairie'; }
+      if (r.value === 'defaut') { delete state.p; delete state.s; state.preset = 'defaut'; }
       else { state.p = r.dataset.p; state.s = r.dataset.s; state.preset = r.value; }
       commit();
     }),
@@ -157,7 +157,7 @@ const title = 'mb-2 text-xs font-extrabold uppercase tracking-wider text-muted';
     catch { status.textContent = url.toString(); }
   });
   panel.querySelector('#pv-reset')!.addEventListener('click', () => {
-    delete state.p; delete state.s; delete state.brand; state.preset = 'prairie';
+    delete state.p; delete state.s; delete state.brand; state.preset = 'defaut';
     commit(); applyBrand();
   });
 

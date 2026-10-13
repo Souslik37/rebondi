@@ -4,6 +4,7 @@
 
 /** Duos de couleurs suggérés : principale (boutons) + secondaire (fonds, bandeaux). */
 export const PRESETS = [
+  { id: 'defaut', label: 'Corail & ciel (base)', p: '#ff8f7a', s: '#7fb8e6' },
   { id: 'prairie', label: 'Prairie', p: '#1d7a3e', s: '#123d25' },
   { id: 'corail', label: 'Corail & nuit', p: '#ff6a4d', s: '#1e1b2e' },
   { id: 'abricot', label: 'Abricot & cacao', p: '#ff9466', s: '#6b4430' },
