@@ -2,6 +2,9 @@
 @import '@fontsource-variable/bricolage-grotesque';
 @import '@fontsource-variable/figtree';
 
+/* Styles appliqués seulement quand le JavaScript est actif (ex. flèches du carrousel) */
+@custom-variant js-on (html.js &);
+
 /* Palette « prairie » : blanc laine + verts d'herbe. Contrastes vérifiés (WCAG AA). */
 @theme {
   --font-sans: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;

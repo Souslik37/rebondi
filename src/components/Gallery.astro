@@ -1,0 +1,109 @@
+---
+// Carrousel photo : une grande image, flèches, glissement au doigt (scroll-snap),
+// compteur et miniatures. Sans JavaScript, on peut toujours faire défiler à la main.
+import { Picture } from 'astro:assets';
+import { chateauImage } from '../lib/data';
+import { ui, tpl } from '../lib/i18n';
+
+interface Props { images: string[]; alts: string[]; label: string }
+const { images, alts, label } = Astro.props;
+const t = ui().chateau;
+const total = images.length;
+const arrow = 'absolute top-1/2 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-ink shadow-md ring-1 ring-black/5 transition hover:bg-white disabled:opacity-0 js-on:flex';
+---
+<section class="gallery min-w-0" aria-roledescription="carrousel" aria-label={label}>
+  <div class="relative">
+    <ul class="track flex snap-x snap-mandatory overflow-x-auto rounded-[var(--radius-blob)] bg-cream [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" role="list" tabindex="0" aria-label={label}>
+      {images.map((img, i) => (
+        <li class="w-full shrink-0 snap-center" aria-roledescription="diapositive" aria-label={tpl(t.galleryCounter, { n: i + 1, total })}>
+          <Picture
+            src={chateauImage(img)}
+            alt={alts[i]!}
+            formats={['avif', 'webp']}
+            widths={[480, 800, 1200]}
+            sizes="(min-width: 1024px) 640px, 100vw"
+            class="aspect-[4/3] w-full object-cover"
+            loading={i === 0 ? 'eager' : 'lazy'}
+            fetchpriority={i === 0 ? 'high' : undefined}
+          />
+        </li>
+      ))}
+    </ul>
+    {total > 1 && (
+      <>
+        <button type="button" class={`prev left-3 ${arrow}`} aria-label={t.galleryPrev}>
+          <svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <button type="button" class={`next right-3 ${arrow}`} aria-label={t.galleryNext}>
+          <svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <p class="counter pointer-events-none absolute right-3 bottom-3 rounded-full bg-ink/80 px-3 py-1 text-sm font-bold text-white" aria-live="polite">
+          {tpl(t.galleryCounter, { n: 1, total })}
+        </p>
+      </>
+    )}
+  </div>
+  {total > 1 && (
+    <ul class="thumbs mt-3 flex gap-2 overflow-x-auto pb-1" role="list">
+      {images.map((img, i) => (
+        <li class="shrink-0">
+          <button type="button" data-index={i} aria-label={tpl(t.galleryThumb, { n: i + 1 })} aria-current={i === 0 ? 'true' : undefined}
+            class="block overflow-hidden rounded-xl opacity-60 ring-2 ring-transparent transition hover:opacity-100 aria-[current=true]:opacity-100 aria-[current=true]:ring-accent-ink">
+            <Picture src={chateauImage(img)} alt="" formats={['avif', 'webp']} widths={[160]} sizes="80px" class="h-14 w-20 object-cover sm:h-16 sm:w-24" loading="lazy" />
+          </button>
+        </li>
+      ))}
+    </ul>
+  )}
+</section>
+
+<script>
+  document.documentElement.classList.add('js');
+  document.querySelectorAll<HTMLElement>('.gallery').forEach((g) => {
+    const track = g.querySelector<HTMLElement>('.track')!;
+    const slides = [...track.children] as HTMLElement[];
+    const prev = g.querySelector<HTMLButtonElement>('.prev');
+    const next = g.querySelector<HTMLButtonElement>('.next');
+    const counter = g.querySelector<HTMLElement>('.counter');
+    const thumbs = [...g.querySelectorAll<HTMLButtonElement>('.thumbs button')];
+    if (slides.length < 2) return;
+
+    let idx = 0;
+    const fromScroll = () => Math.round(track.scrollLeft / track.clientWidth);
+    const update = () => {
+      if (prev) prev.disabled = idx === 0;
+      if (next) next.disabled = idx === slides.length - 1;
+      if (counter) counter.textContent = `${idx + 1} / ${slides.length}`;
+      thumbs.forEach((b, k) => (k === idx ? b.setAttribute('aria-current', 'true') : b.removeAttribute('aria-current')));
+      // Garde la miniature active visible, sans toucher au défilement de la page
+      const li = thumbs[idx]?.parentElement;
+      const strip = li?.parentElement;
+      if (strip && li) {
+        const left = li.offsetLeft - strip.offsetLeft;
+        if (left < strip.scrollLeft) strip.scrollLeft = left;
+        else if (left + li.offsetWidth > strip.scrollLeft + strip.clientWidth) strip.scrollLeft = left + li.offsetWidth - strip.clientWidth;
+      }
+    };
+    const go = (i: number) => {
+      idx = Math.max(0, Math.min(slides.length - 1, i));
+      const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      track.scrollTo({ left: idx * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+      update();
+    };
+
+    prev?.addEventListener('click', () => go(idx - 1));
+    next?.addEventListener('click', () => go(idx + 1));
+    thumbs.forEach((b) => b.addEventListener('click', () => go(Number(b.dataset.index))));
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); }
+    });
+    // Glissement au doigt : on suit la position une fois le défilement stabilisé
+    let timer = 0;
+    track.addEventListener('scroll', () => {
+      clearTimeout(timer);
+      timer = window.setTimeout(() => { idx = fromScroll(); update(); }, 120);
+    }, { passive: true });
+    update();
+  });
+</script>

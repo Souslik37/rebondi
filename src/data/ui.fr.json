@@ -43,7 +43,11 @@
     "weight": "Poids (dans son sac)",
     "packed": "Taille du sac",
     "spaceHint": "Château + 1 m de marge tout autour, sur pelouse.",
-    "spaceShort": "Espace"
+    "spaceShort": "Espace",
+    "galleryPrev": "Photo précédente",
+    "galleryNext": "Photo suivante",
+    "galleryThumb": "Afficher la photo {n}",
+    "galleryCounter": "{n} / {total}"
   },
   "home": {
     "promiseTitle": "Ce que Rebondi vous promet",
