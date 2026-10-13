@@ -14,6 +14,9 @@ const siteSchema = z.object({
   url: z.url(),
   basePath: z.string().regex(/^(\/[a-z0-9-]+)?$/, 'basePath : "" ou "/sous-dossier"'),
   demo: z.boolean(),
+  // 'whatsapp' : le bouton envoie la demande par WhatsApp (hébergement sans formulaire, ex. GitHub Pages)
+  // 'netlify'  : envoi classique via Netlify Forms
+  formMode: z.enum(['whatsapp', 'netlify']),
   themePicker: z.boolean(),
   baseCity: z.string(),
   currency: z.string(),

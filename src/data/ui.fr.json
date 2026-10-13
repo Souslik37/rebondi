@@ -77,12 +77,6 @@
     "datePast": "Choisissez une date à partir de demain.",
     "unavailableListLabel": "Dates déjà réservées pour ce château :",
     "unavailableNone": "Aucune date bloquée pour l'instant.",
-    "access": "Le passage jusqu'à l'emplacement fait-il au moins 1 m de large ?",
-    "power": "Y a-t-il une prise électrique à moins de 25 m ?",
-    "yes": "Oui",
-    "no": "Non",
-    "unsure": "Je ne sais pas",
-    "checkWarning": "Précisez la situation dans le message. Nos châteaux s'installent uniquement sur pelouse : Alexandre vous dira honnêtement si c'est possible.",
     "message": "Message",
     "messageHint": "Occasion, âge et nombre d'enfants, heure de retrait souhaitée…",
     "submit": "Envoyer ma demande",
@@ -94,10 +88,11 @@
     "errorSummary": "Le formulaire contient des erreurs :",
     "formulaPickup": "Je viens le chercher à Genval",
     "formulaDelivery": "Je souhaite une livraison (prix sur demande)",
-    "city": "Commune de la fête",
     "address": "Adresse de livraison",
-    "addressHint": "Nécessaire pour calculer le prix de la livraison.",
-    "lawn": "Le château sera-t-il installé sur une pelouse ?"
+    "addressHint": "Rue, numéro, code postal et commune : nécessaire pour calculer le prix de la livraison.",
+    "submitWhatsapp": "Envoyer ma demande par WhatsApp",
+    "whatsappSubmitHint": "WhatsApp s'ouvre avec votre demande déjà rédigée : il ne reste qu'à appuyer sur Envoyer. Alexandre vous répond sous 24 heures.",
+    "emailShort": "E-mail"
   },
   "pages": {
     "home": {
